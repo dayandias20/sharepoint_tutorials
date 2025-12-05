@@ -427,6 +427,15 @@
                     onclick="switchTab('hesaa')">
                     HESAA Mock Interview
                 </button>
+                <button
+                    class="tab-button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="spfx-lwc-panel"
+                    id="spfx-lwc-tab"
+                    onclick="switchTab('spfxlwc')">
+                    SPFx vs LWC
+                </button>
             </div>
 
             <div id="basics-panel" class="tab-content active" role="tabpanel" aria-labelledby="basics-tab">
@@ -4327,6 +4336,125 @@ Does Power Automate have a connector for your app?
                     </div>
                 </article>
             </div>
+
+            <div id="spfx-lwc-panel" class="tab-content" role="tabpanel" aria-labelledby="spfx-lwc-tab">
+                <h2 class="section-heading">SPFx vs Lightning Web Components (LWC)</h2>
+                <p style="margin-bottom: 30px; font-size: 1.05rem; color: #666;">Comparison between SharePoint Framework and Salesforce Lightning Web Components.</p>
+
+                <article class="qa-section">
+                    <h2 class="question">
+                        <span class="question-number" aria-hidden="true">1</span>
+                        <span>Lightning Web Components (LWC)</span>
+                    </h2>
+                    <div class="answer">
+                        <p><strong>Purpose:</strong> LWC is Salesforce's modern framework for building UI components on the Salesforce platform, similar to how SPFx works for SharePoint.</p>
+                        <p><strong>Technology Stack:</strong> It uses standard web technologies (HTML, CSS, JavaScript) and aligns with modern web standards, much like SPFx.</p>
+                        <p><strong>Integration:</strong> LWC components run natively on the Salesforce platform and can be embedded in Lightning pages, apps, and communities.</p>
+                        <p><strong>Advantages:</strong></p>
+                        <ul>
+                            <li>High performance due to native rendering.</li>
+                            <li>Works alongside older Aura components, but LWC is the recommended approach for new development.</li>
+                            <li>Supports modular development and reusability.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="qa-section">
+                    <h2 class="question">
+                        <span class="question-number" aria-hidden="true">2</span>
+                        <span>Comparison to SPFx</span>
+                    </h2>
+                    <div class="answer">
+                        <p>Both frameworks aim to provide customization and extensibility for their respective platforms.</p>
+                        <p>SPFx focuses on SharePoint Online and Microsoft 365, while LWC is for Salesforce Lightning Experience.</p>
+                        <p>Both leverage modern JavaScript frameworks and tooling.</p>
+
+                        <h3 style="margin-top: 25px; margin-bottom: 15px; color: #0078d4;">Feature Comparison Table</h3>
+                        <div style="overflow-x: auto; margin: 20px 0;">
+                            <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                <thead>
+                                    <tr style="background-color: #0078d4; color: white;">
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd; font-weight: 600;">Feature</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd; font-weight: 600;">SPFx (SharePoint Framework)</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd; font-weight: 600;">LWC (Lightning Web Components)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600;">Platform</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Microsoft 365 / SharePoint Online</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Salesforce Lightning Experience</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600;">Purpose</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Build custom web parts, extensions, and apps for SharePoint</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Build reusable UI components for Salesforce apps</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600;">Technology Stack</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">TypeScript, React (optional), Node.js</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Standard Web Components (HTML, CSS, JavaScript)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600;">Framework Type</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Client-side development framework</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Component-based framework using native web standards</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600;">Deployment</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Deployed to SharePoint Online or Microsoft Teams</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Deployed to Salesforce Org (Lightning Pages, Apps)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600;">Tooling</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Yeoman generator, Gulp, npm</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Salesforce CLI, npm</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600;">Hosting</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">SharePoint Online CDN or Azure CDN</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Salesforce Platform</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600;">Integration</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Works with SharePoint lists, libraries, and Microsoft Graph</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Works with Salesforce data via Apex and Lightning Data Service</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600;">Customization Scope</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">SharePoint sites, Teams tabs, Microsoft 365 apps</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Salesforce Lightning pages, Communities, Mobile apps</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600;">Security Model</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">OAuth with Microsoft Graph</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Salesforce security model (Profiles, Permissions)</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600;">Learning Curve</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Moderate (requires knowledge of SharePoint + modern JS)</td>
+                                        <td style="padding: 12px; border: 1px solid #ddd;">Moderate (requires Salesforce concepts + JS)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="qa-section">
+                    <h2 class="question">
+                        <span class="question-number" aria-hidden="true">3</span>
+                        <span>Interview Answer: How does your LWC experience translate to SPFx?</span>
+                    </h2>
+                    <div class="answer">
+                        <div class="experience-highlight">
+                            <p>My experience with Lightning Web Components (LWC) in Salesforce translates very well to SharePoint Framework (SPFx) because both frameworks share a similar foundation in modern web development. LWC is built on standard web technologies like HTML, CSS, and JavaScript, and emphasizes component-based architecture, modularity, and reusability—principles that SPFx also relies on. In LWC, I've worked extensively with JavaScript ES6+, reactive data binding, and event-driven communication between components, which are directly applicable to SPFx development using TypeScript and React.</p>
+                            <p>Additionally, I'm comfortable with CLI-based workflows, version control, and packaging components for deployment in Salesforce, which mirrors SPFx's use of Node.js, npm, and build tools like Gulp. Both frameworks require integration with platform APIs—Salesforce uses Apex and Lightning Data Service, while SPFx uses Microsoft Graph and SharePoint REST APIs—so my experience in handling asynchronous calls, managing state, and ensuring secure data access is highly relevant.</p>
+                            <p>In short, the core skills—modern JavaScript, component-driven design, responsive UI development, and API integration—are common to both frameworks. This makes transitioning from LWC to SPFx a natural progression for me.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </main>
 
         <script>
@@ -4340,7 +4468,8 @@ Does Power Automate have a connector for your app?
                     integration: document.getElementById('integration-tab'),
                     technical: document.getElementById('technical-tab'),
                     scenario: document.getElementById('scenario-tab'),
-                    hesaa: document.getElementById('hesaa-tab')
+                    hesaa: document.getElementById('hesaa-tab'),
+                    spfxlwc: document.getElementById('spfx-lwc-tab')
                 };
                 const panels = {
                     basics: document.getElementById('basics-panel'),
@@ -4350,7 +4479,8 @@ Does Power Automate have a connector for your app?
                     integration: document.getElementById('integration-panel'),
                     technical: document.getElementById('technical-panel'),
                     scenario: document.getElementById('scenario-panel'),
-                    hesaa: document.getElementById('hesaa-panel')
+                    hesaa: document.getElementById('hesaa-panel'),
+                    spfxlwc: document.getElementById('spfx-lwc-panel')
                 };
 
                 // Deactivate all
