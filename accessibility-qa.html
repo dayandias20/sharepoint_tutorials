@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accessibility & ADA Compliance Interview Questions - HESAA Web Developer Position">
+    <title>Accessibility & ADA Compliance Q&A - HESAA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #107c10;
+        }
+
+        h1 {
+            color: #107c10;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #107c10;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0e6b0e;
+        }
+
+        .section-divider {
+            font-size: 1.8rem;
+            color: #107c10;
+            margin: 50px 0 30px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #107c10;
+            font-weight: 600;
+        }
+
+        .qa-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background-color: #fafafa;
+            border-left: 4px solid #107c10;
+            border-radius: 4px;
+        }
+
+        .question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #107c10;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .question-number {
+            background-color: #107c10;
+            color: white;
+            min-width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .answer {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .answer p {
+            margin-bottom: 15px;
+        }
+
+        .answer ul, .answer ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .answer li {
+            margin-bottom: 10px;
+        }
+
+        .answer strong {
+            color: #107c10;
+            font-weight: 600;
+        }
+
+        .answer code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .highlight-box {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #107c10;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .question {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="final-questions.html" class="back-button">← Back to Topics</a>
+
+        <header>
+            <h1>Accessibility & ADA Compliance</h1>
+            <p class="subtitle">Interview Questions & Expert Answers for HESAA Position</p>
+        </header>
+
+        <main>
+            <h2 class="section-divider">Technical Questions</h2>
+
+            <!-- Question 28 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">28</span>
+                    <span>How do you ensure a website meets WCAG 2.1 Level AA standards? Walk me through your testing process.</span>
+                </div>
+                <div class="answer">
+                    <p>Four-phase approach:</p>
+                    <ol>
+                        <li><strong>Automated scanning</strong> with axe DevTools/WAVE to catch obvious issues (alt text, contrast)</li>
+                        <li><strong>Keyboard testing</strong>—navigate entire site using Tab/Enter only</li>
+                        <li><strong>Screen reader testing</strong> with JAWS/NVDA to verify announcements and labels</li>
+                        <li><strong>Manual code review</strong> for semantic HTML and proper ARIA</li>
+                    </ol>
+                    <p>Document findings by severity and track fixes.</p>
+                </div>
+            </div>
+
+            <!-- Question 29 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">29</span>
+                    <span>Explain the importance of ARIA labels and when you would use them. Give specific examples.</span>
+                </div>
+                <div class="answer">
+                    <p>ARIA adds meaning when native HTML isn't enough. Use when:</p>
+                    <ul>
+                        <li><code>aria-label="Close"</code> on a <code>&lt;button&gt;×&lt;/button&gt;</code> to describe visual-only icons</li>
+                        <li><code>aria-describedby="error-msg"</code> to link error text to invalid fields</li>
+                        <li><code>aria-expanded="true/false"</code> on accordions to announce state</li>
+                        <li><code>aria-live="polite"</code> for dynamic content updates</li>
+                    </ul>
+                    <p>Never override native semantics—prefer <code>&lt;button&gt;</code> over <code>&lt;div role="button"&gt;</code>.</p>
+                </div>
+            </div>
+
+            <!-- Question 30 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">30</span>
+                    <span>How do you make complex data tables (like financial aid program comparisons) accessible to screen reader users?</span>
+                </div>
+                <div class="answer">
+                    <p>Use proper markup:</p>
+                    <ul>
+                        <li><code>&lt;caption&gt;</code> for table description</li>
+                        <li><code>&lt;th scope="col/row"&gt;</code> for headers</li>
+                        <li>Connect headers to cells with <code>id</code>/<code>headers</code> attributes for complex tables</li>
+                    </ul>
+                    <p>For very complex tables, provide a simplified view or convert to card layout on mobile.</p>
+                    <div class="highlight-box">
+                        <strong>Example:</strong><br>
+                        <code>&lt;th scope="col" id="eligibility"&gt;</code> paired with<br>
+                        <code>&lt;td headers="eligibility program-njclass"&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 31 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">31</span>
+                    <span>What tools do you use for accessibility testing? (JAWS, NVDA, axe DevTools, etc.)</span>
+                </div>
+                <div class="answer">
+                    <p><strong>Screen Readers:</strong> JAWS, NVDA, VoiceOver</p>
+                    <p><strong>Browser Tools:</strong> axe DevTools, WAVE, Lighthouse</p>
+                    <p><strong>Color Contrast:</strong> WebAIM Contrast Checker</p>
+                    <p><strong>Automation:</strong> Pa11y for CI/CD</p>
+                    <p>Automated tools catch ~30-40% of issues; manual testing catches the rest (tab order, link clarity, context).</p>
+                </div>
+            </div>
+
+            <!-- Question 32 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">32</span>
+                    <span>How do you ensure PDFs posted on the HESAA website are accessible?</span>
+                </div>
+                <div class="answer">
+                    <p>Create accessible source documents (proper headings, alt text) before PDF conversion.</p>
+                    <p><strong>In Adobe Acrobat Pro:</strong></p>
+                    <ul>
+                        <li>Run Accessibility Checker</li>
+                        <li>Tag document structure</li>
+                        <li>Set reading order</li>
+                        <li>Add alt text</li>
+                        <li>Ensure color contrast (4.5:1)</li>
+                        <li>Make forms fillable with labels</li>
+                        <li>Run OCR on scans</li>
+                    </ul>
+                    <p>Always provide HTML alternative when possible.</p>
+                </div>
+            </div>
+
+            <!-- Question 33 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">33</span>
+                    <span>Explain how you would test keyboard-only navigation on a website.</span>
+                </div>
+                <div class="answer">
+                    <p>Disconnect mouse. Use Tab to move forward, Shift+Tab backward—verify all interactive elements are reachable.</p>
+                    <p><strong>Check:</strong></p>
+                    <ul>
+                        <li>Visible focus indicators on each element</li>
+                        <li>Enter for links/buttons, Space for checkboxes</li>
+                        <li>Arrow keys for dropdowns</li>
+                        <li>Escape to close modals</li>
+                        <li>Skip links work</li>
+                        <li>Focus doesn't trap in modals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Question 34 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">34</span>
+                    <span>What are common accessibility issues in SharePoint, and how do you remediate them?</span>
+                </div>
+                <div class="answer">
+                    <div class="warning-box">
+                        <strong>Issue:</strong> Poor color contrast → <strong>Fix:</strong> Custom WCAG-compliant theme
+                    </div>
+                    <div class="warning-box">
+                        <strong>Issue:</strong> Missing form labels → <strong>Fix:</strong> Add <code>&lt;label&gt;</code> or <code>aria-label</code>
+                    </div>
+                    <div class="warning-box">
+                        <strong>Issue:</strong> Unlabeled images → <strong>Fix:</strong> Require alt text, train authors
+                    </div>
+                    <div class="warning-box">
+                        <strong>Issue:</strong> Complex navigation → <strong>Fix:</strong> Hub sites, skip links, proper heading hierarchy
+                    </div>
+                    <div class="warning-box">
+                        <strong>Issue:</strong> Non-accessible PDFs → <strong>Fix:</strong> Train on Adobe Acrobat Pro remediation
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-divider">Scenario-Based Questions</h2>
+
+            <!-- Question 35 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">35</span>
+                    <span>An accessibility audit reveals 50+ WCAG violations on HESAA's website. How would you prioritize and address these?</span>
+                </div>
+                <div class="answer">
+                    <p><strong>Critical (Week 1):</strong> Forms unusable by keyboard, missing form labels, text contrast &lt;3:1</p>
+                    <p><strong>High (1 Month):</strong> Missing alt text, broken heading structure, keyboard traps</p>
+                    <p><strong>Medium (3 Months):</strong> Contrast 3-4.49:1, PDF issues, ARIA improvements</p>
+                    <p>Start with quick wins (theme changes affecting whole site), fix highest-traffic pages first, train content authors, implement governance checklist.</p>
+                </div>
+            </div>
+
+            <!-- Question 36 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">36</span>
+                    <span>A user with low vision complains they can't read text on the website. How would you investigate and fix this?</span>
+                </div>
+                <div class="answer">
+                    <p><strong>Investigate:</strong></p>
+                    <ul>
+                        <li>Check color contrast (needs 4.5:1)</li>
+                        <li>Font size (minimum 16px)</li>
+                        <li>Zoom to 200% without breaking</li>
+                        <li>Test High Contrast Mode</li>
+                    </ul>
+                    <p><strong>Fix:</strong></p>
+                    <ul>
+                        <li>Darken text/lighten background for contrast</li>
+                        <li>Increase base font to 16px with relative units (rem)</li>
+                        <li>Use responsive design for zoom</li>
+                        <li>Provide high-contrast theme toggle</li>
+                        <li>Ensure 44px touch targets</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 50px;">
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li>✅ Accessibility is non-negotiable for government agencies</li>
+                    <li>✅ Automated tools catch 30-40%; manual testing essential</li>
+                    <li>✅ WCAG 2.1 Level AA is the standard (4.5:1 contrast, keyboard access, screen reader support)</li>
+                    <li>✅ Train content authors on accessibility best practices</li>
+                    <li>✅ Test with real assistive technology (JAWS, NVDA, keyboard-only)</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p><strong>HESAA Web Developer Interview Preparation</strong></p>
+            <p>Accessibility & ADA Compliance | WCAG 2.1 AA Standards</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Generated: December 2025</p>
+        </footer>
+    </div>
+</body>
+</html>

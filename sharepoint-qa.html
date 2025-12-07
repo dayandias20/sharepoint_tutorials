@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SharePoint Interview Questions - HESAA Web Developer Position">
+    <title>SharePoint Interview Q&A - HESAA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #0078d4;
+        }
+
+        h1 {
+            color: #0078d4;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0078d4;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #106ebe;
+        }
+
+        .section-divider {
+            font-size: 1.8rem;
+            color: #0078d4;
+            margin: 50px 0 30px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #0078d4;
+            font-weight: 600;
+        }
+
+        .qa-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background-color: #fafafa;
+            border-left: 4px solid #0078d4;
+            border-radius: 4px;
+        }
+
+        .question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0078d4;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .question-number {
+            background-color: #0078d4;
+            color: white;
+            min-width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .answer {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .answer h3 {
+            color: #0078d4;
+            font-size: 1.2rem;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .answer h4 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .answer p {
+            margin-bottom: 15px;
+        }
+
+        .answer ul, .answer ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .answer li {
+            margin-bottom: 10px;
+        }
+
+        .answer strong {
+            color: #0078d4;
+            font-weight: 600;
+        }
+
+        .code-block {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 15px 0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #0078d4;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .highlight-box {
+            background-color: #e6f2ff;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #0078d4;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .success-box {
+            background-color: #d4edda;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .checkmark {
+            color: #28a745;
+        }
+
+        .xmark {
+            color: #dc3545;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .question {
+                font-size: 1.1rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="final-questions.html" class="back-button">← Back to Topics</a>
+
+        <header>
+            <h1>SharePoint Interview Questions & Answers</h1>
+            <p class="subtitle">Comprehensive Technical & Scenario-Based Questions for HESAA Position</p>
+        </header>
+
+        <main>
+            <h2 class="section-divider">Technical Questions</h2>
+
+            <!-- Question 1 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">1</span>
+                    <span>How would you design the information architecture for HESAA's SharePoint intranet to serve different departments (Financial Aid Programs, Communications, IT, Student Services)?</span>
+                </div>
+                <div class="answer">
+                    <p>I'd approach this using a <strong>hub site architecture</strong> for scalability and governance:</p>
+
+                    <h3>Structure:</h3>
+                    <ul>
+                        <li><strong>Primary Hub:</strong> HESAA Intranet Home (corporate communications, news, policies)</li>
+                        <li><strong>Department Hub Sites:</strong>
+                            <ul>
+                                <li>Financial Aid Programs Hub</li>
+                                <li>Communications Hub</li>
+                                <li>IT Services Hub</li>
+                                <li>Student Services Hub</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>Design Rationale:</h3>
+                    <ul>
+                        <li><strong>Hub sites</strong> provide shared navigation, branding, and search aggregation while maintaining department autonomy</li>
+                        <li>Each department gets its own <strong>site collection</strong> (not subsites) for independent permissions, storage quotas, and recycle bins</li>
+                        <li>Use <strong>site templates</strong> to ensure consistency while allowing customization</li>
+                        <li>Implement <strong>term store taxonomy</strong> with department-specific term sets for metadata tagging</li>
+                    </ul>
+
+                    <h3>Navigation Design:</h3>
+                    <ul>
+                        <li>Global navigation showing all hubs</li>
+                        <li>Local navigation within each hub for department-specific resources</li>
+                        <li>Audience targeting to show relevant content based on department membership</li>
+                    </ul>
+
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li>Centralized document libraries with department-specific folders and permissions</li>
+                        <li>Department-specific news web parts aggregated to home page</li>
+                        <li>Power Automate workflows for document approvals within departments</li>
+                        <li>Search-driven experience with metadata refiners (department, document type, program)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">2</span>
+                    <span>Walk me through your process for managing SharePoint permissions when you have sensitive student financial data that needs restricted access.</span>
+                </div>
+                <div class="answer">
+                    <h3>Security Model:</h3>
+                    <p>I'd use <strong>SharePoint security groups</strong> (not AD groups directly) for granular control:</p>
+
+                    <h3>Tiered Permission Structure:</h3>
+                    <ol>
+                        <li><strong>Site Collection Admins:</strong> IT administrators only</li>
+                        <li><strong>Site Owners:</strong> Department managers (Financial Aid Director)</li>
+                        <li><strong>Site Members:</strong> Standard department staff (read/edit non-sensitive content)</li>
+                        <li><strong>Custom Permission Levels:</strong>
+                            <ul>
+                                <li>"Financial Data Reviewers" (View Only - no download)</li>
+                                <li>"Financial Data Processors" (Edit specific libraries only)</li>
+                                <li>"Compliance Officers" (Full Control on sensitive libraries)</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h3>Implementation Process:</h3>
+                    <ol>
+                        <li><strong>Break inheritance</strong> at the document library level for sensitive data</li>
+                        <li>Create <strong>dedicated security groups</strong> for each access level</li>
+                        <li>Use <strong>Item-level permissions</strong> sparingly (only when necessary for specific cases)</li>
+                        <li>Enable <strong>Access Request settings</strong> routing to compliance officer</li>
+                        <li>Implement <strong>Sensitivity labels</strong> (DLP policies) to auto-classify and protect documents</li>
+                        <li>Enable <strong>audit logging</strong> to track who accesses sensitive files</li>
+                    </ol>
+
+                    <h3>Best Practices:</h3>
+                    <ul>
+                        <li>Document the permission structure in a governance document</li>
+                        <li>Regular <strong>permission audits</strong> quarterly using PowerShell reports</li>
+                        <li>Remove "Everyone" and "All Users" groups from sensitive libraries</li>
+                        <li>Use <strong>Azure AD conditional access</strong> to require MFA for sensitive site access</li>
+                        <li>Enable <strong>versioning</strong> and <strong>retention policies</strong> to prevent data loss</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">3</span>
+                    <span>Explain the difference between SharePoint Online and SharePoint Server. What are the pros and cons of each for a government agency?</span>
+                </div>
+                <div class="answer">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>SharePoint Online (SPO)</th>
+                                <th>SharePoint Server (On-Prem)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Hosting</strong></td>
+                                <td>Microsoft cloud (Azure)</td>
+                                <td>Your own servers/data center</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Updates</strong></td>
+                                <td>Automatic, continuous updates</td>
+                                <td>Manual patching (monthly CU/PU)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cost</strong></td>
+                                <td>Per-user subscription (~$5-20/user/month)</td>
+                                <td>Server licenses + infrastructure + IT staff</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scalability</strong></td>
+                                <td>Unlimited, cloud-scale</td>
+                                <td>Limited by hardware capacity</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Integration</strong></td>
+                                <td>Native M365 integration (Teams, OneDrive, Power Platform)</td>
+                                <td>Limited integration, requires configuration</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Customization</strong></td>
+                                <td>SPFx framework only (modern)</td>
+                                <td>Full server-side code, farm solutions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Security</strong></td>
+                                <td>Microsoft manages infrastructure security</td>
+                                <td>Full control over security configuration</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>For a Government Agency (HESAA):</h3>
+
+                    <div class="success-box">
+                        <h4>SharePoint Online PROS:</h4>
+                        <ul>
+                            <li><span class="checkmark">✅</span> <strong>Compliance:</strong> FedRAMP certified, meets government standards</li>
+                            <li><span class="checkmark">✅</span> <strong>Cost-effective:</strong> No server hardware, reduces IT overhead</li>
+                            <li><span class="checkmark">✅</span> <strong>Disaster recovery:</strong> Built-in geo-redundancy and backup</li>
+                            <li><span class="checkmark">✅</span> <strong>Modern features:</strong> Latest collaboration tools (Teams, Planner, Power Platform)</li>
+                            <li><span class="checkmark">✅</span> <strong>Mobile access:</strong> Cloud accessibility for remote work</li>
+                            <li><span class="checkmark">✅</span> <strong>Reduced attack surface:</strong> Microsoft handles infrastructure patching</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>SharePoint Online CONS:</h4>
+                        <ul>
+                            <li><span class="xmark">❌</span> <strong>Data sovereignty:</strong> Data stored in Microsoft cloud (may require GCC High for sensitive data)</li>
+                            <li><span class="xmark">❌</span> <strong>Less customization:</strong> Limited to SPFx, no server-side code</li>
+                            <li><span class="xmark">❌</span> <strong>Internet dependency:</strong> Requires reliable connectivity</li>
+                            <li><span class="xmark">❌</span> <strong>Compliance scrutiny:</strong> May require approval from state IT security boards</li>
+                        </ul>
+                    </div>
+
+                    <div class="success-box">
+                        <h4>SharePoint Server PROS:</h4>
+                        <ul>
+                            <li><span class="checkmark">✅</span> <strong>Data control:</strong> All data stays on-premises</li>
+                            <li><span class="checkmark">✅</span> <strong>Full customization:</strong> Farm solutions, event receivers, custom code</li>
+                            <li><span class="checkmark">✅</span> <strong>Hybrid options:</strong> Can integrate with SPO gradually</li>
+                            <li><span class="checkmark">✅</span> <strong>Network isolation:</strong> Can be completely air-gapped if required</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>SharePoint Server CONS:</h4>
+                        <ul>
+                            <li><span class="xmark">❌</span> <strong>High cost:</strong> Servers, SQL, IT staff for maintenance</li>
+                            <li><span class="xmark">❌</span> <strong>Manual patching:</strong> Monthly security updates required</li>
+                            <li><span class="xmark">❌</span> <strong>Scalability limits:</strong> Hardware constraints</li>
+                            <li><span class="xmark">❌</span> <strong>Legacy features:</strong> Missing modern experiences, Teams integration</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4>Recommendation for HESAA:</h4>
+                        <p><strong>SharePoint Online (potentially GCC)</strong> - Government agencies are increasingly adopting cloud solutions. HESAA would benefit from cost savings, automatic updates, and modern collaboration tools. If student financial data requires special handling, consider <strong>GCC (Government Community Cloud)</strong> for enhanced compliance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">4</span>
+                    <span>How do you perform vulnerability assessments and apply security patches to a SharePoint Server environment?</span>
+                </div>
+                <div class="answer">
+                    <h3>Vulnerability Assessment Process:</h3>
+
+                    <h4>1. Monthly Security Review (First Tuesday of Month)</h4>
+                    <ul>
+                        <li>Review Microsoft Security Response Center (MSRC) bulletin</li>
+                        <li>Check SharePoint-specific CVEs and severity ratings</li>
+                        <li>Cross-reference with NIST National Vulnerability Database</li>
+                    </ul>
+
+                    <h4>2. Scanning Tools</h4>
+                    <ul>
+                        <li><strong>Microsoft Baseline Security Analyzer (MBSA):</strong> Scan for missing patches</li>
+                        <li><strong>Nessus/Qualys:</strong> Third-party vulnerability scanning</li>
+                        <li><strong>SharePoint Health Analyzer:</strong> Built-in health check rules</li>
+                        <li><strong>Security & Compliance Center:</strong> Review compliance score</li>
+                    </ul>
+
+                    <h4>3. Assessment Areas</h4>
+                    <ul>
+                        <li>Operating system patches (Windows Server)</li>
+                        <li>SQL Server patches and service packs</li>
+                        <li>SharePoint cumulative updates (CU) or public updates (PU)</li>
+                        <li>IIS configuration hardening</li>
+                        <li>SSL/TLS certificate validity</li>
+                        <li>Firewall rules and network segmentation</li>
+                    </ul>
+
+                    <h3>Patching Process:</h3>
+
+                    <h4>Phase 1: Planning (Day 1-3)</h4>
+                    <ol>
+                        <li>Review patch notes and known issues on SharePoint community forums</li>
+                        <li>Check compatibility with custom solutions (SPFx, farm solutions)</li>
+                        <li>Schedule maintenance window (typically Saturday night)</li>
+                        <li>Notify stakeholders via email and intranet banner</li>
+                    </ol>
+
+                    <h4>Phase 2: Testing (Day 4-7)</h4>
+                    <ol>
+                        <li><strong>Create VM snapshot</strong> of production farm</li>
+                        <li>Deploy patch to <strong>test/staging environment</strong> first</li>
+                        <li>Run automated tests (smoke tests, critical workflows)</li>
+                        <li>Verify custom web parts and workflows function</li>
+                        <li>Test search crawl and user permissions</li>
+                        <li>Get sign-off from business owners</li>
+                    </ol>
+
+                    <h4>Phase 3: Production Deployment (Maintenance Window)</h4>
+                    <ol>
+                        <li><strong>Backup everything:</strong>
+                            <ul>
+                                <li>SQL content databases (full backup)</li>
+                                <li>Configuration database</li>
+                                <li>Service application databases</li>
+                                <li>IIS configuration export</li>
+                            </ul>
+                        </li>
+                        <li><strong>Stop SharePoint services</strong> (Timer Service, Search, User Profile Sync)</li>
+                        <li><strong>Apply patches</strong> in order:
+                            <ul>
+                                <li>SQL Server patches first</li>
+                                <li>Windows OS patches</li>
+                                <li>SharePoint binaries (run as farm admin)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Run PSConfig.exe</strong> or SharePoint Products Configuration Wizard</li>
+                        <li><strong>Upgrade content databases</strong> (if required)</li>
+                        <li><strong>Start services</strong> and verify health</li>
+                    </ol>
+
+                    <h4>Phase 4: Verification (Post-Patch)</h4>
+                    <ol>
+                        <li>Run <code>Get-SPProduct -Local</code> to verify version</li>
+                        <li>Check SharePoint Health Analyzer for errors</li>
+                        <li>Test critical functionality:
+                            <ul>
+                                <li>Site access and permissions</li>
+                                <li>Search functionality</li>
+                                <li>Workflow execution</li>
+                                <li>Custom web parts</li>
+                            </ul>
+                        </li>
+                        <li>Monitor ULS logs for errors</li>
+                        <li>Send completion notification to stakeholders</li>
+                    </ol>
+
+                    <h4>Tools Used:</h4>
+                    <ul>
+                        <li><strong>PowerShell scripts:</strong> Automated patching across farm servers</li>
+                        <li><strong>AutoSPInstaller:</strong> For consistent farm builds</li>
+                        <li><strong>SharePoint Management Shell:</strong> Health checks and verification</li>
+                        <li><strong>SCCM/WSUS:</strong> Centralized patch management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">5</span>
+                    <span>Describe your experience with SharePoint migration. What tools and strategies would you use to migrate legacy content?</span>
+                </div>
+                <div class="answer">
+                    <h3>Migration Experience:</h3>
+                    <p>I led a migration of <strong>2TB of content</strong> from <strong>SharePoint 2013 to SharePoint Online</strong>, including 25+ site collections serving 800+ users.</p>
+
+                    <h3>Migration Strategy:</h3>
+
+                    <h4>Phase 1: Discovery & Assessment (2-3 weeks)</h4>
+                    <ol>
+                        <li><strong>Inventory current environment:</strong>
+                            <ul>
+                                <li>Run <code>Get-SPSite -Limit All</code> to list all site collections</li>
+                                <li>Use SharePoint Migration Assessment Tool (SMAT) to identify issues</li>
+                                <li>Document custom solutions (workflows, web parts, InfoPath forms)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Content analysis:</strong>
+                            <ul>
+                                <li>Identify inactive sites (no activity >1 year)</li>
+                                <li>Large files (>250MB limit in SPO)</li>
+                                <li>Broken links, orphaned items, duplicate content</li>
+                            </ul>
+                        </li>
+                        <li><strong>Create migration wave plan:</strong>
+                            <ul>
+                                <li>Pilot sites (low-risk departments)</li>
+                                <li>Production waves (department by department)</li>
+                                <li>Sensitive data last (Financial Aid)</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h4>Phase 2: Remediation (3-4 weeks)</h4>
+                    <ol>
+                        <li><strong>Clean up content:</strong>
+                            <ul>
+                                <li>Archive/delete inactive sites (save 30-40% storage)</li>
+                                <li>Break large files into smaller chunks or move to OneDrive</li>
+                                <li>Retire SharePoint 2010 workflows → migrate to Power Automate</li>
+                                <li>Convert InfoPath forms → PowerApps</li>
+                            </ul>
+                        </li>
+                        <li><strong>Redesign information architecture:</strong>
+                            <ul>
+                                <li>Flatten deep folder hierarchies (improve findability)</li>
+                                <li>Implement hub sites instead of nested subsites</li>
+                                <li>Create modern team sites instead of classic sites</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h4>Phase 3: Migration Execution</h4>
+
+                    <h3>Tools I'd Use:</h3>
+
+                    <div class="highlight-box">
+                        <h4>1. SharePoint Migration Tool (SPMT) - Microsoft's free tool</h4>
+                        <ul>
+                            <li><strong>Best for:</strong> Document libraries, lists, small site collections</li>
+                            <li><strong>Pros:</strong> Free, supports incremental migration, auto-mapping</li>
+                            <li><strong>Cons:</strong> Limited customization, can be slow for large datasets</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4>2. Sharegate - Third-party (my preferred tool)</h4>
+                        <ul>
+                            <li><strong>Best for:</strong> Complex migrations, enterprise scale</li>
+                            <li><strong>Pros:</strong>
+                                <ul>
+                                    <li>Excellent permission mapping and reporting</li>
+                                    <li>Pre-migration health checks</li>
+                                    <li>Incremental migration (delta sync)</li>
+                                    <li>Workflow and web part analysis</li>
+                                </ul>
+                            </li>
+                            <li><strong>Cons:</strong> Licensing cost (~$5K-15K)</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4>3. PowerShell with PnP - For custom scenarios</h4>
+                        <div class="code-block">Connect-PnPOnline -Url "https://source.sharepoint.com/sites/OldSite"
+Get-PnPListItem -List "Documents" -PageSize 500
+Connect-PnPOnline -Url "https://tenant.sharepoint.com/sites/NewSite"
+Add-PnPFile -Path $file -Folder "Shared Documents"</div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4>4. Microsoft 365 Migration App - For file shares and content</h4>
+                        <ul>
+                            <li>Good for migrating network drives to SharePoint/OneDrive</li>
+                        </ul>
+                    </div>
+
+                    <h3>Migration Approach:</h3>
+                    <ol>
+                        <li><strong>Pilot migration</strong> (1 department, 50 users):
+                            <ul>
+                                <li>Test tool, validate process</li>
+                                <li>Train users on modern SharePoint</li>
+                                <li>Gather feedback, refine approach</li>
+                            </ul>
+                        </li>
+                        <li><strong>Wave migrations</strong> (bi-weekly waves):
+                            <ul>
+                                <li>Migrate during off-hours (Friday night)</li>
+                                <li>Run delta sync before cutover</li>
+                                <li>Dual-run for 1 week (old + new access)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Post-migration validation:</strong>
+                            <ul>
+                                <li>Permission verification (spot-check 20% of files)</li>
+                                <li>Search crawl completion</li>
+                                <li>Workflow testing</li>
+                                <li>User acceptance testing</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h3>Common Issues & Solutions:</h3>
+                    <ul>
+                        <li><strong>Versioning limits:</strong> SPO has version limits → trim old versions pre-migration</li>
+                        <li><strong>Path length:</strong> 400-character limit → flatten folders</li>
+                        <li><strong>Special characters:</strong> #, % in file names → rename before migration</li>
+                        <li><strong>Customizations:</strong> Farm solutions don't work in SPO → redevelop as SPFx</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">6</span>
+                    <span>How do you monitor and optimize SharePoint site performance when sites are loading slowly?</span>
+                </div>
+                <div class="answer">
+                    <h3>Troubleshooting Approach:</h3>
+
+                    <h4>Step 1: Identify the Bottleneck</h4>
+
+                    <h3>Browser-Level Diagnostics:</h3>
+                    <ol>
+                        <li>Open <strong>F12 Developer Tools</strong> → Network tab</li>
+                        <li>Identify slow-loading resources:
+                            <ul>
+                                <li>Large images (>500KB)</li>
+                                <li>Blocking JavaScript files</li>
+                                <li>Slow API calls (>2 seconds)</li>
+                            </ul>
+                        </li>
+                        <li>Check <strong>console errors</strong> (JavaScript exceptions)</li>
+                        <li>Use <strong>Lighthouse</strong> (Audit tab) for performance score</li>
+                    </ol>
+
+                    <h3>SharePoint-Level Diagnostics:</h3>
+                    <ol>
+                        <li><strong>Modern pages:</strong> Click "Diagnostics" → Download HAR file</li>
+                        <li>Review <strong>page weight</strong> (target: <2MB total)</li>
+                        <li>Check <strong>web part performance</strong> (some web parts are resource-intensive)</li>
+                        <li>Review <strong>list view threshold</strong> (over 5,000 items?)</li>
+                    </ol>
+
+                    <h3>Server-Level (On-Prem):</h3>
+                    <ol>
+                        <li>Check <strong>SharePoint Health Analyzer</strong> for warnings</li>
+                        <li>Review <strong>ULS logs</strong> for slow queries or timeouts</li>
+                        <li>Monitor <strong>SQL Server</strong> performance:
+                            <ul>
+                                <li>CPU usage, memory pressure</li>
+                                <li>Long-running queries (sp_who2)</li>
+                                <li>Blocking/deadlocks</li>
+                            </ul>
+                        </li>
+                        <li>Check <strong>IIS logs</strong> for slow requests (>10 seconds)</li>
+                    </ol>
+
+                    <h4>Step 2: Common Issues & Fixes</h4>
+
+                    <div class="warning-box">
+                        <h4>Issue 1: Large List Views (>5,000 items)</h4>
+                        <ul>
+                            <li><strong>Symptom:</strong> "List view threshold" error or slow rendering</li>
+                            <li><strong>Fix:</strong>
+                                <ul>
+                                    <li>Create indexed columns (modified date, content type)</li>
+                                    <li>Add filters to views (show last 30 days only)</li>
+                                    <li>Enable folder-based organization</li>
+                                    <li>Use modern list instead of classic</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>Issue 2: Unoptimized Images</h4>
+                        <ul>
+                            <li><strong>Symptom:</strong> Slow page load, large network transfer</li>
+                            <li><strong>Fix:</strong>
+                                <ul>
+                                    <li>Use SharePoint image renditions (auto-resize)</li>
+                                    <li>Compress images before upload (TinyPNG, ImageOptim)</li>
+                                    <li>Use modern image web part (lazy loading)</li>
+                                    <li>Enable CDN for image libraries (SPO only)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>Issue 3: Too Many Web Parts</h4>
+                        <ul>
+                            <li><strong>Symptom:</strong> Slow initial page render</li>
+                            <li><strong>Fix:</strong>
+                                <ul>
+                                    <li>Limit to 6-8 web parts per page</li>
+                                    <li>Remove unused web parts</li>
+                                    <li>Use "See all" links instead of showing 50 items</li>
+                                    <li>Lazy load web parts (scroll into view)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>Issue 4: Custom JavaScript/SPFx Performance</h4>
+                        <ul>
+                            <li><strong>Symptom:</strong> Slow script execution, browser hangs</li>
+                            <li><strong>Fix:</strong>
+                                <ul>
+                                    <li>Review SPFx bundle size (webpack-bundle-analyzer)</li>
+                                    <li>Remove unused libraries (tree shaking)</li>
+                                    <li>Use async/await for API calls</li>
+                                    <li>Implement caching (localStorage, session storage)</li>
+                                    <li>Debounce search/filter inputs</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>Issue 5: Search Crawl Issues (On-Prem)</h4>
+                        <ul>
+                            <li><strong>Symptom:</strong> Continuous crawling, high CPU</li>
+                            <li><strong>Fix:</strong>
+                                <ul>
+                                    <li>Exclude crawling frequently-changing lists</li>
+                                    <li>Increase crawl database size</li>
+                                    <li>Schedule crawls during off-hours</li>
+                                    <li>Review crawler impact rules</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4>Step 3: Proactive Optimization</h4>
+
+                    <h3>SharePoint Online:</h3>
+                    <ol>
+                        <li>Enable <strong>SharePoint CDN</strong> for static assets:
+                            <div class="code-block">Set-SPOTenantCdnEnabled -CdnType Public -Enable $true</div>
+                        </li>
+                        <li>Use <strong>modern pages</strong> (faster than classic)</li>
+                        <li>Implement <strong>page caching</strong> for static content</li>
+                        <li>Monitor via <strong>Microsoft 365 Admin Center → Reports → SharePoint Usage</strong></li>
+                    </ol>
+
+                    <h3>SharePoint On-Prem:</h3>
+                    <ol>
+                        <li><strong>Distributed Cache:</strong> Ensure properly configured (feed cache, security trimming)</li>
+                        <li><strong>BLOB storage:</strong> Move large files to RBS (Remote BLOB Storage)</li>
+                        <li><strong>SQL optimization:</strong>
+                            <ul>
+                                <li>Regular index maintenance (rebuild/reorganize)</li>
+                                <li>Update statistics weekly</li>
+                                <li>Partition large databases</li>
+                            </ul>
+                        </li>
+                        <li><strong>Server resources:</strong> Scale out web front-ends if CPU >70%</li>
+                    </ol>
+
+                    <h3>Performance Targets:</h3>
+                    <ul>
+                        <li><strong>Page load:</strong> <3 seconds (desktop), <5 seconds (mobile)</li>
+                        <li><strong>Time to Interactive (TTI):</strong> <5 seconds</li>
+                        <li><strong>Largest Contentful Paint (LCP):</strong> <2.5 seconds</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">7</span>
+                    <span>What's your approach to SharePoint governance? How do you prevent site sprawl and maintain consistency?</span>
+                </div>
+                <div class="answer">
+                    <h3>Governance Framework:</h3>
+
+                    <h4>1. Site Provisioning Controls</h4>
+
+                    <h3>Site Request Process:</h3>
+                    <ul>
+                        <li><strong>No self-service site creation</strong> for site collections (prevent sprawl)</li>
+                        <li>Implement <strong>site request form</strong> (PowerApps + Power Automate):
+                            <ul>
+                                <li>Department, business justification, site owner</li>
+                                <li>Expected number of users, data sensitivity level</li>
+                                <li>Approval workflow: Department head → IT → Compliance (if sensitive data)</li>
+                            </ul>
+                        </li>
+                        <li>Provision from <strong>approved site templates</strong> only (ensure branding/structure)</li>
+                    </ul>
+
+                    <h3>Site Lifecycle Management:</h3>
+                    <ul>
+                        <li><strong>Expiration policies:</strong> Sites expire after 2 years of inactivity</li>
+                        <li>Automated reminders to site owners (90, 60, 30 days before expiration)</li>
+                        <li><strong>Recertification:</strong> Annual review by site owners to confirm still needed</li>
+                        <li><strong>Archival process:</strong> Move inactive sites to "Archived" web app (on-prem) or read-only (SPO)</li>
+                    </ul>
+
+                    <h4>2. Permission Management</h4>
+
+                    <h3>Access Control Standards:</h3>
+                    <ul>
+                        <li><strong>Principle of least privilege:</strong> Users get minimum access needed</li>
+                        <li><strong>No "Everyone" group:</strong> Use AD security groups for department-based access</li>
+                        <li><strong>Break inheritance sparingly:</strong> Document all permission breaks in governance log</li>
+                        <li><strong>Regular audits:</strong> Quarterly permission reviews via PowerShell reports</li>
+                    </ul>
+                    <div class="code-block">Get-SPWeb -Site "https://intranet" -Limit All |
+  Where-Object {$_.HasUniqueRoleAssignments} |
+  Select-Object URL, Title</div>
+
+                    <h4>3. Content Organization Standards</h4>
+
+                    <h3>Taxonomy & Metadata:</h3>
+                    <ul>
+                        <li><strong>Enterprise term store:</strong> Centralized taxonomy for:
+                            <ul>
+                                <li>Departments (Financial Aid, IT, Communications)</li>
+                                <li>Document types (Policy, Procedure, Form, Report)</li>
+                                <li>Program areas (NJCLASS, EOF, TAG, NJ Stars)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Mandatory metadata:</strong> Require department and document type on libraries</li>
+                        <li><strong>Content types:</strong> 5-7 standard content types (prevent proliferation)</li>
+                    </ul>
+
+                    <h3>Naming Conventions:</h3>
+                    <ul>
+                        <li><strong>Sites:</strong> [Department]-[Purpose] (e.g., "FinAid-Policies", "IT-KnowledgeBase")</li>
+                        <li><strong>Libraries:</strong> Descriptive names (avoid "Documents", use "Policies", "Forms")</li>
+                        <li><strong>Folders:</strong> Discourage deep nesting (max 3 levels)</li>
+                    </ul>
+
+                    <h4>4. Template & Branding Standards</h4>
+
+                    <h3>Approved Templates:</h3>
+                    <ul>
+                        <li>Department site template (team collaboration)</li>
+                        <li>Project site template (temporary projects)</li>
+                        <li>Knowledge base template (policies, procedures)</li>
+                        <li>Prevent custom site templates (maintenance nightmare)</li>
+                    </ul>
+
+                    <h3>Design Consistency:</h3>
+                    <ul>
+                        <li><strong>Hub site branding:</strong> Centrally managed theme, logo, navigation</li>
+                        <li><strong>Approved color palette:</strong> HESAA brand colors only</li>
+                        <li><strong>Modern experience:</strong> Disable classic UI where possible</li>
+                        <li><strong>Custom master pages:</strong> Avoid (breaks upgrades, creates tech debt)</li>
+                    </ul>
+
+                    <h4>5. Preventing Site Sprawl</h4>
+
+                    <h3>Strategies:</h3>
+                    <ol>
+                        <li><strong>Educate site owners:</strong> Monthly training on Teams vs. SharePoint vs. OneDrive
+                            <ul>
+                                <li>Teams: Collaboration, chat, meetings</li>
+                                <li>SharePoint: Departmental sites, intranet, formal documents</li>
+                                <li>OneDrive: Personal files, draft documents</li>
+                            </ul>
+                        </li>
+                        <li><strong>Promote Teams:</strong> Many site requests should actually be Teams</li>
+                        <li><strong>Hub sites:</strong> Encourage subsites under hubs (not new site collections)</li>
+                        <li><strong>Discovery:</strong> Monthly reports on new sites created, review with governance board</li>
+                        <li><strong>Decommissioning:</strong> Proactively retire unused sites (auto-archive after 1 year inactivity)</li>
+                    </ol>
+
+                    <h4>6. Governance Documentation</h4>
+
+                    <h3>Essential Documents:</h3>
+                    <ul>
+                        <li>SharePoint governance plan (15-20 pages)</li>
+                        <li>Site request and provisioning process</li>
+                        <li>Permission management standard</li>
+                        <li>Naming conventions and taxonomy guide</li>
+                        <li>Site owner responsibilities (SOPs)</li>
+                        <li>Retention and archival policies</li>
+                    </ul>
+
+                    <h3>Governance Board:</h3>
+                    <ul>
+                        <li><strong>Quarterly meetings:</strong> IT, Compliance, Department representatives</li>
+                        <li>Review site requests, policy updates, security incidents</li>
+                        <li>Approve new content types, templates, customizations</li>
+                    </ul>
+
+                    <h4>7. Monitoring & Reporting</h4>
+
+                    <h3>Monthly Reports:</h3>
+                    <ul>
+                        <li>New sites created (review justification)</li>
+                        <li>Sites with broken inheritance (permission audits)</li>
+                        <li>Largest sites (storage management)</li>
+                        <li>Inactive sites (candidates for archival)</li>
+                        <li>External sharing activity (security review)</li>
+                    </ul>
+
+                    <h3>Tools:</h3>
+                    <ul>
+                        <li><strong>PowerShell scripts:</strong> Automated reporting</li>
+                        <li><strong>SPDocKit</strong> (third-party): Governance dashboards, permission reports</li>
+                        <li><strong>SharePoint Admin Center:</strong> Usage analytics, audit logs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">8</span>
+                    <span>Explain the difference between hub sites, site collections, and subsites. When would you use each?</span>
+                </div>
+                <div class="answer">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Site Collection</th>
+                                <th>Subsite</th>
+                                <th>Hub Site</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Definition</strong></td>
+                                <td>Top-level container, independent unit</td>
+                                <td>Child site within site collection</td>
+                                <td>Virtual grouping of site collections</td>
+                            </tr>
+                            <tr>
+                                <td><strong>URL Pattern</strong></td>
+                                <td>https://intranet/sites/hr</td>
+                                <td>https://intranet/sites/hr/onboarding</td>
+                                <td>Multiple site collections associated</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Permissions</strong></td>
+                                <td>Independent permission boundary</td>
+                                <td>Inherits or breaks from parent</td>
+                                <td>Each site maintains own permissions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Storage Quota</strong></td>
+                                <td>Has own quota (on-prem)</td>
+                                <td>Shares parent quota</td>
+                                <td>N/A (virtual grouping)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Recycle Bin</strong></td>
+                                <td>Two-stage recycle bin</td>
+                                <td>Shares parent recycle bin</td>
+                                <td>N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Search</strong></td>
+                                <td>Own search scope</td>
+                                <td>Included in parent scope</td>
+                                <td>Aggregates search across associated sites</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Navigation</strong></td>
+                                <td>Independent</td>
+                                <td>Can inherit parent</td>
+                                <td>Shared navigation across associated sites</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Admin</strong></td>
+                                <td>Site collection admin</td>
+                                <td>Site owner</td>
+                                <td>Hub owner configures branding/nav</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>When to Use Each:</h3>
+
+                    <div class="success-box">
+                        <h4>Site Collections - Use for:</h4>
+                        <ul>
+                            <li><span class="checkmark">✅</span> <strong>Department sites with sensitive data</strong> (Financial Aid, HR)
+                                <ul><li>Reason: Independent permission boundary, own recycle bin</li></ul>
+                            </li>
+                            <li><span class="checkmark">✅</span> <strong>Large departments needing storage control</strong>
+                                <ul><li>Reason: Dedicated storage quota (on-prem)</li></ul>
+                            </li>
+                            <li><span class="checkmark">✅</span> <strong>Sites requiring distinct branding</strong> (external partner portals)
+                                <ul><li>Reason: Own theme, master page (classic)</li></ul>
+                            </li>
+                            <li><span class="checkmark">✅</span> <strong>Long-term sites</strong> (not temporary projects)
+                                <ul><li>Reason: Easier to manage lifecycle independently</li></ul>
+                            </li>
+                        </ul>
+
+                        <p><strong>Example:</strong></p>
+                        <ul>
+                            <li>https://hesaa.sharepoint.com/sites/FinancialAid</li>
+                            <li>https://hesaa.sharepoint.com/sites/IT</li>
+                            <li>https://hesaa.sharepoint.com/sites/Communications</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4>Subsites - Use for:</h4>
+                        <ul>
+                            <li><span class="checkmark">✅</span> <strong>Closely related sub-teams</strong> (HR → Onboarding, Benefits, Recruitment)
+                                <ul><li>Reason: Logical hierarchy, shared navigation</li></ul>
+                            </li>
+                            <li><span class="checkmark">✅</span> <strong>Temporary projects</strong> within a department
+                                <ul><li>Reason: Easy to delete without affecting parent</li></ul>
+                            </li>
+                            <li><span class="checkmark">✅</span> <strong>When you want inherited permissions</strong> (most users have same access)
+                                <ul><li>Reason: Simplifies permission management</li></ul>
+                            </li>
+                        </ul>
+
+                        <div class="warning-box" style="margin-top: 15px;">
+                            <p><strong>⚠️ WARNING: Microsoft de-emphasizes subsites in modern SharePoint</strong></p>
+                            <ul>
+                                <li>Modern team sites don't support subsites well</li>
+                                <li>Harder to migrate, flat structures preferred</li>
+                                <li>Use Teams channels instead of subsites for collaboration</li>
+                            </ul>
+                        </div>
+
+                        <p><strong>Example:</strong></p>
+                        <ul>
+                            <li>https://hesaa.sharepoint.com/sites/HR (parent)
+                                <ul>
+                                    <li>https://hesaa.sharepoint.com/sites/HR/Onboarding (subsite)</li>
+                                    <li>https://hesaa.sharepoint.com/sites/HR/Benefits (subsite)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="success-box">
+                        <h4>Hub Sites - Use for:</h4>
+                        <ul>
+                            <li><span class="checkmark">✅</span> <strong>Connecting related site collections</strong> without making subsites
+                                <ul><li>Reason: Shared navigation and branding without subsite limitations</li></ul>
+                            </li>
+                            <li><span class="checkmark">✅</span> <strong>Department-wide portals</strong> (Financial Aid Hub connecting program sites)
+                                <ul><li>Reason: Unified navigation across multiple sites</li></ul>
+                            </li>
+                            <li><span class="checkmark">✅</span> <strong>Roll-up content</strong> (aggregate news, events across department sites)
+                                <ul><li>Reason: Hub news web part, search roll-ups</li></ul>
+                            </li>
+                            <li><span class="checkmark">✅</span> <strong>Modern intranet architecture</strong> (replacing subsites)
+                                <ul><li>Reason: Flexible, scalable, modern approach</li></ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h3>Example - HESAA Hub Structure:</h3>
+
+                    <div class="highlight-box">
+                        <h4>Hub: Financial Aid Programs (hub site)</h4>
+                        <p><strong>Associated sites:</strong></p>
+                        <ul>
+                            <li>NJ CLASS Loans (site collection)</li>
+                            <li>EOF Program (site collection)</li>
+                            <li>TAG Grants (site collection)</li>
+                            <li>NJSTARS Program (site collection)</li>
+                        </ul>
+                        <p><strong>Benefit:</strong> Shared navigation, roll-up news from all programs, unified search</p>
+
+                        <h4 style="margin-top: 20px;">Hub: IT Services (hub site)</h4>
+                        <p><strong>Associated sites:</strong></p>
+                        <ul>
+                            <li>Help Desk (site collection)</li>
+                            <li>Projects (site collection)</li>
+                            <li>Documentation (site collection)</li>
+                        </ul>
+                    </div>
+
+                    <h3>My Recommendation for HESAA:</h3>
+
+                    <div class="highlight-box">
+                        <h4>Use Hub Site Architecture:</h4>
+                        <div class="code-block">HESAA Intranet (Communication Site - Home)
+├─ Hub: Financial Aid Programs
+│  ├─ Associated: NJ CLASS Site (Team Site)
+│  ├─ Associated: EOF Program (Team Site)
+│  └─ Associated: TAG Grants (Team Site)
+├─ Hub: Communications
+│  ├─ Associated: News & Events (Communication Site)
+│  └─ Associated: Marketing Resources (Team Site)
+├─ Hub: IT Services
+│  ├─ Associated: IT Help Desk (Team Site)
+│  └─ Associated: IT Projects (Team Site)
+└─ Hub: Student Services
+   └─ Associated: Student Support (Team Site)</div>
+
+                        <h4>Why This Works:</h4>
+                        <ul>
+                            <li>Each site collection = independent permissions (critical for HESAA's sensitive data)</li>
+                            <li>Hub sites = unified navigation and branding</li>
+                            <li>Scalable (easy to add new program sites)</li>
+                            <li>Modern architecture (future-proof)</li>
+                            <li>No subsites (avoid technical debt)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-divider">Scenario-Based Questions</h2>
+
+            <!-- Question 9 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">9</span>
+                    <span>HESAA staff report they can't access an important financial aid document library. Walk me through how you would troubleshoot this.</span>
+                </div>
+                <div class="answer">
+                    <h3>Step-by-Step Troubleshooting:</h3>
+
+                    <h4>Phase 1: Gather Information (5 minutes)</h4>
+                    <ol>
+                        <li><strong>Who is affected?</strong>
+                            <ul>
+                                <li>Single user, specific department, or everyone?</li>
+                                <li>Document user name(s) and department</li>
+                            </ul>
+                        </li>
+                        <li><strong>What exactly happens?</strong>
+                            <ul>
+                                <li>"Access Denied" error?</li>
+                                <li>Page doesn't load (blank screen, timeout)?</li>
+                                <li>Specific documents or entire library?</li>
+                            </ul>
+                        </li>
+                        <li><strong>When did this start?</strong>
+                            <ul>
+                                <li>Sudden (last hour) or gradual?</li>
+                                <li>After any changes (permission updates, migration, patching)?</li>
+                            </ul>
+                        </li>
+                        <li><strong>Has it ever worked for these users?</strong>
+                            <ul>
+                                <li>New employees vs. existing users losing access</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h4>Phase 2: Quick Checks (10 minutes)</h4>
+
+                    <h3>Test 1: Verify with Your Admin Account</h3>
+                    <ul>
+                        <li>Log in with <strong>site collection admin</strong> credentials</li>
+                        <li>Can YOU access the library?
+                            <ul>
+                                <li><span class="checkmark">✅</span> YES → Permission issue (user-specific)</li>
+                                <li><span class="xmark">❌</span> NO → Site/library issue (affects everyone)</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>Test 2: Check Site Status (SharePoint Online)</h3>
+                    <ul>
+                        <li>Open <strong>SharePoint Admin Center</strong> → Sites → Active sites</li>
+                        <li>Is the site showing as "Active" or any warnings?</li>
+                        <li>Check Microsoft 365 Service Health for SharePoint outages</li>
+                    </ul>
+
+                    <h3>Test 3: Test with Another User in Same Department</h3>
+                    <ul>
+                        <li>Can their colleagues access it?
+                            <ul>
+                                <li><span class="checkmark">✅</span> YES → User-specific issue</li>
+                                <li><span class="xmark">❌</span> NO → Department group or permission issue</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Phase 3: Permission Verification (15 minutes)</h4>
+
+                    <h3>Check User Permissions:</h3>
+                    <ol>
+                        <li>Navigate to <strong>Library Settings → Permissions for this document library</strong></li>
+                        <li>Click <strong>Check Permissions</strong> (ribbon)</li>
+                        <li>Enter affected user's email → Click "Check Now"</li>
+                        <li>Review what permission level they have (if any)</li>
+                    </ol>
+
+                    <h3>Common Permission Issues:</h3>
+
+                    <div class="warning-box">
+                        <h4>Issue 1: Broken Inheritance Without Adding User</h4>
+                        <ul>
+                            <li><strong>Symptom:</strong> User had access yesterday, not today</li>
+                            <li><strong>Cause:</strong> Someone broke inheritance on library but forgot to add users</li>
+                            <li><strong>Fix:</strong>
+                                <ul>
+                                    <li>Library Settings → Permissions → Grant Permissions →</li>
+                                    <li>Add [Department Group] with "Read" or "Contribute"</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>Issue 2: User Not in Required AD Security Group</h4>
+                        <ul>
+                            <li><strong>Symptom:</strong> "Access Denied - You need permission to access this site"</li>
+                            <li><strong>Cause:</strong> Library uses AD group "Financial_Aid_Staff" but user not member</li>
+                            <li><strong>Fix:</strong>
+                                <ul>
+                                    <li>Check AD group membership: <code>Get-ADGroupMember "Financial_Aid_Staff"</code></li>
+                                    <li>Add user to group (may take 24 hours to sync)</li>
+                                    <li>Immediate workaround: Add user directly to SharePoint group</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>Issue 3: Item-Level Permissions Blocking Access</h4>
+                        <ul>
+                            <li><strong>Symptom:</strong> Can see library, but specific documents show "Access Denied"</li>
+                            <li><strong>Cause:</strong> Someone set unique permissions on folders/files</li>
+                            <li><strong>Fix:</strong>
+                                <ul>
+                                    <li>Go to specific document → "..." → Details → Manage Access</li>
+                                    <li>Check "Who has access" → Add user if missing</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4>Phase 4: Technical Issues (20 minutes)</h4>
+
+                    <div class="warning-box">
+                        <h4>Issue 4: Site Collection Lock State (On-Prem)</h4>
+                        <div class="code-block">Get-SPSite "https://intranet/sites/FinancialAid" | Select-Object LockState</div>
+                        <ul>
+                            <li>If <code>ReadOnly</code> or <code>NoAccess</code> → Site was locked (storage quota or admin lock)</li>
+                            <li>Fix: <code>Set-SPSite -Identity [URL] -LockState "Unlock"</code></li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>Issue 5: Authentication Issues</h4>
+                        <ul>
+                            <li><strong>Symptom:</strong> Prompted for credentials repeatedly, never loads</li>
+                            <li><strong>Cause:</strong> Kerberos misconfiguration, expired SSL cert, browser cache</li>
+                            <li><strong>Fix:</strong>
+                                <ul>
+                                    <li>Clear browser cache: Ctrl+Shift+Delete</li>
+                                    <li>Try <strong>incognito/private mode</strong></li>
+                                    <li>Try different browser (Edge vs. Chrome)</li>
+                                    <li>Check if user can access from different computer</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>Issue 6: Limited Access Lockdown Mode (Classic Sites)</h4>
+                        <ul>
+                            <li><strong>Symptom:</strong> Users with "Limited Access" can't view library even though they should</li>
+                            <li><strong>Cause:</strong> Feature <code>ViewFormPagesLockDown</code> is activated</li>
+                            <li><strong>Fix:</strong></li>
+                        </ul>
+                        <div class="code-block">Disable-SPFeature -Identity "ViewFormPagesLockDown"
+  -Url "https://intranet/sites/FinancialAid"</div>
+                    </div>
+
+                    <h4>Phase 5: Advanced Diagnostics (30 minutes)</h4>
+
+                    <h3>Check Audit Logs (SharePoint Online):</h3>
+                    <ol>
+                        <li><strong>Microsoft Purview Compliance Center</strong> → Audit → Search</li>
+                        <li>Filter:
+                            <ul>
+                                <li>Activities: "File and page activities"</li>
+                                <li>Users: [Affected user]</li>
+                                <li>Site: [Financial Aid site URL]</li>
+                            </ul>
+                        </li>
+                        <li>Look for "Access denied" events showing what triggered denial</li>
+                    </ol>
+
+                    <h3>Check ULS Logs (On-Prem):</h3>
+                    <div class="code-block">Get-SPLogEvent -StartTime (Get-Date).AddHours(-2) |
+  Where-Object {$_.Message -like "*Access Denied*"} |
+  Select-Object Timestamp, Message</div>
+
+                    <h3>Network/Firewall Issues:</h3>
+                    <ul>
+                        <li>Can user access other SharePoint sites?</li>
+                        <li>If off-site, is VPN connected?</li>
+                        <li>Check firewall rules blocking SharePoint URLs</li>
+                    </ul>
+
+                    <h4>Phase 6: Resolution & Communication</h4>
+
+                    <h3>Immediate Workaround:</h3>
+                    <ul>
+                        <li>If urgent access needed and permission fix takes time:
+                            <ul>
+                                <li>Create SharePoint group "Financial_Aid_Temp_Access"</li>
+                                <li>Add affected users</li>
+                                <li>Grant group access to library</li>
+                                <li>Remove once permanent fix deployed</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>Root Cause Fix:</h3>
+                    <ul>
+                        <li>Document what caused issue (broken inheritance, missing group)</li>
+                        <li>Implement fix (restore inheritance, add group membership)</li>
+                        <li>Test with affected users</li>
+                        <li>Verify access working</li>
+                    </ul>
+
+                    <h3>Communication:</h3>
+                    <ol>
+                        <li><strong>Acknowledge:</strong> "I've received your report and am investigating" (within 15 min)</li>
+                        <li><strong>Update:</strong> "I've identified the issue - permission group was removed. Fixing now" (30 min)</li>
+                        <li><strong>Resolution:</strong> "Access restored. Please test and confirm. Root cause: [explain]" (1 hour)</li>
+                        <li><strong>Prevention:</strong> "I've documented this and will audit permissions quarterly to prevent recurrence"</li>
+                    </ol>
+
+                    <h3>Post-Incident:</h3>
+                    <ul>
+                        <li>Update runbook/documentation</li>
+                        <li>If recurring issue → implement monitoring alert</li>
+                        <li>Review governance (why did permissions break?)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">10</span>
+                    <span>You need to restructure the SharePoint intranet to improve findability of resources. How would you approach this project?</span>
+                </div>
+                <div class="answer">
+                    <h3>Project Approach:</h3>
+
+                    <h4>Phase 1: Discovery & Research (2-3 weeks)</h4>
+
+                    <h3>1. Understand Current Problems</h3>
+                    <ul>
+                        <li><strong>User interviews</strong> (15-20 staff across departments):
+                            <ul>
+                                <li>"How do you find documents today?"</li>
+                                <li>"What resources do you struggle to find?"</li>
+                                <li>"How often do you use search vs. browse?"</li>
+                            </ul>
+                        </li>
+                        <li><strong>Analytics review:</strong>
+                            <ul>
+                                <li>Top searched keywords (failed searches = findability problems)</li>
+                                <li>Most visited pages (what's working)</li>
+                                <li>Least visited pages (orphaned content)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Heuristic evaluation:</strong>
+                            <ul>
+                                <li>Count clicks to reach common resources (goal: ≤3 clicks)</li>
+                                <li>Test navigation labels (jargon vs. plain language)</li>
+                                <li>Identify broken links, outdated content</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>2. Content Inventory</h3>
+                    <ul>
+                        <li>Catalog all sites, libraries, pages (use SharePoint Auditor tool)</li>
+                        <li>Document content types:
+                            <ul>
+                                <li>Policies (40 documents)</li>
+                                <li>Procedures (60 documents)</li>
+                                <li>Forms (200 documents)</li>
+                                <li>Program resources (150 documents)</li>
+                            </ul>
+                        </li>
+                        <li>Identify duplicates, outdated content (haven't been modified in 2+ years)</li>
+                    </ul>
+
+                    <h3>3. User Research</h3>
+                    <ul>
+                        <li><strong>Card sorting exercise</strong> (20 participants):
+                            <ul>
+                                <li>Give users 50 content items on cards</li>
+                                <li>Ask them to group and label categories</li>
+                                <li>Reveals how users mentally organize information</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tree testing:</strong>
+                            <ul>
+                                <li>Present proposed navigation structure</li>
+                                <li>Ask users to find specific items</li>
+                                <li>Measure success rate (goal: >80%)</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Phase 2: Information Architecture Design (2 weeks)</h4>
+
+                    <h3>1. Organize Content by User Tasks (Not Departments)</h3>
+
+                    <div class="warning-box">
+                        <h4>Before (Department-Based - Poor Findability):</h4>
+                        <div class="code-block">├─ Financial Aid Department
+├─ IT Department
+├─ Communications Department
+└─ Student Services Department</div>
+                        <p><strong>Problem:</strong> Users don't know which department owns what resource</p>
+                    </div>
+
+                    <div class="success-box">
+                        <h4>After (Task-Based - Better Findability):</h4>
+                        <div class="code-block">HESAA Intranet Home
+├─ 🎓 Programs & Services
+│  ├─ NJ CLASS Loans
+│  ├─ EOF Program
+│  ├─ TAG Grants
+│  └─ NJSTARS
+├─ 📋 Forms & Applications
+│  ├─ Student Forms
+│  ├─ Internal Forms
+│  └─ Financial Aid Professional Forms
+├─ 📚 Policies & Procedures
+│  ├─ HR Policies
+│  ├─ Financial Policies
+│  └─ IT Policies
+├─ 🛠 Employee Resources
+│  ├─ IT Help & Support
+│  ├─ Onboarding
+│  └─ Training Materials
+└─ 📰 News & Announcements</div>
+                    </div>
+
+                    <h3>2. Implement Faceted Navigation</h3>
+                    <ul>
+                        <li><strong>Metadata-driven findability:</strong>
+                            <ul>
+                                <li>Tag content with: Department, Document Type, Program, Audience</li>
+                                <li>Create refiners in search results</li>
+                                <li>Example: User searches "application" → refine by "NJ CLASS" + "Student Forms"</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>3. Create Clear Navigation Patterns</h3>
+                    <ul>
+                        <li><strong>Global Navigation (Top Bar):</strong> Home | Programs | Forms | Policies | IT Help | News</li>
+                        <li><strong>Hub Site Navigation (Left Rail):</strong> Shows context-specific links based on current hub</li>
+                        <li><strong>Mega Menu (Flyout):</strong> Hover over "Programs" → See all program types with descriptions</li>
+                    </ul>
+
+                    <h4>Phase 3: Search Optimization (1-2 weeks)</h4>
+
+                    <h3>1. Improve Search Relevance</h3>
+
+                    <h4>Search Schema Configuration:</h4>
+                    <ul>
+                        <li>Make key properties <strong>searchable and refinable:</strong>
+                            <ul>
+                                <li>Program name</li>
+                                <li>Document type</li>
+                                <li>Department</li>
+                                <li>Date modified</li>
+                            </ul>
+                        </li>
+                        <li>Create managed properties for custom metadata</li>
+                        <li>Boost relevance of official documents (policies, forms)</li>
+                    </ul>
+
+                    <h3>2. Implement Search-Driven Pages</h3>
+
+                    <div class="highlight-box">
+                        <h4>Forms Page Example:</h4>
+                        <p><strong>[Search Box: "Find a form..."]</strong></p>
+                        <p><strong>[Filters:]</strong></p>
+                        <ul>
+                            <li>Program: [All | NJ CLASS | EOF | TAG | NJSTARS]</li>
+                            <li>Audience: [All | Students | Staff | Financial Aid Pros]</li>
+                            <li>Document Type: [Application | Request Form | Report]</li>
+                        </ul>
+                        <p><strong>[Results: 156 forms found]</strong></p>
+                        <p>[Visual cards showing form title, description, last updated, download link]</p>
+                    </div>
+
+                    <h3>3. Create Promoted Results</h3>
+                    <ul>
+                        <li>When user searches "new employee" → Show "Onboarding" as promoted result</li>
+                        <li>When user searches "IT help" → Show help desk link as promoted result</li>
+                    </ul>
+
+                    <h4>Phase 4: Content Curation (3-4 weeks)</h4>
+
+                    <h3>1. Archive or Delete Outdated Content</h3>
+                    <ul>
+                        <li>Move content not modified in 3+ years to "Archive" library</li>
+                        <li>Delete obvious obsolete content (events from 2015, old branding)</li>
+                        <li>Reduce content volume by 30-40%</li>
+                    </ul>
+
+                    <h3>2. Standardize Content Presentation</h3>
+
+                    <div class="warning-box">
+                        <h4>Before (Inconsistent):</h4>
+                        <ul>
+                            <li>Policy documents: Some PDFs, some Word docs, some pages</li>
+                            <li>Inconsistent naming: "HR_Policy_2021_Final_v3.docx"</li>
+                        </ul>
+                    </div>
+
+                    <div class="success-box">
+                        <h4>After (Standardized):</h4>
+                        <ul>
+                            <li>All policies published as <strong>modern SharePoint pages</strong> (accessible, searchable)</li>
+                            <li>Consistent naming: "Policy - [Topic] - [Date]"</li>
+                            <li>Template structure: Purpose | Scope | Policy | Related Documents</li>
+                        </ul>
+                    </div>
+
+                    <h3>3. Create Landing Pages for Key Topics</h3>
+
+                    <div class="highlight-box">
+                        <h4>Example: "New Employee Onboarding" Landing Page</h4>
+                        <ul>
+                            <li>Quick start guide (video)</li>
+                            <li>Checklist of tasks</li>
+                            <li>Links to forms needed</li>
+                            <li>Contact information for HR</li>
+                            <li>FAQs</li>
+                        </ul>
+                    </div>
+
+                    <h4>Phase 5: Implementation (2-3 weeks)</h4>
+
+                    <h3>Week 1: Build Structure</h3>
+                    <ul>
+                        <li>Create new hub sites</li>
+                        <li>Provision site collections</li>
+                        <li>Configure navigation (global, hub, local)</li>
+                    </ul>
+
+                    <h3>Week 2: Migrate Content</h3>
+                    <ul>
+                        <li>Move content to new structure</li>
+                        <li>Apply metadata tagging (use PowerShell for bulk operations)</li>
+                        <li>Configure search refiners</li>
+                        <li>Set up promoted results</li>
+                    </ul>
+
+                    <h3>Week 3: Polish & Test</h3>
+                    <ul>
+                        <li>Design homepage with clear entry points</li>
+                        <li>Add visual elements (icons, images, banners)</li>
+                        <li>User acceptance testing with 10 staff members</li>
+                        <li>Fix issues discovered</li>
+                    </ul>
+
+                    <h4>Phase 6: Launch & Adoption (4 weeks)</h4>
+
+                    <h3>Soft Launch (Week 1):</h3>
+                    <ul>
+                        <li>Invite 20 "champions" from each department to test</li>
+                        <li>Gather feedback, make adjustments</li>
+                    </ul>
+
+                    <h3>Full Launch (Week 2):</h3>
+                    <ul>
+                        <li><strong>Communication plan:</strong>
+                            <ul>
+                                <li>Email announcement with video tour</li>
+                                <li>Live demo sessions (3 sessions across different times)</li>
+                                <li>Quick reference guide (PDF)</li>
+                            </ul>
+                        </li>
+                        <li>Keep old intranet accessible for 2 weeks (parallel run)</li>
+                    </ul>
+
+                    <h3>Training (Week 3-4):</h3>
+                    <ul>
+                        <li>Department-specific training sessions (30 min each)</li>
+                        <li>Office hours (daily for 2 weeks)</li>
+                        <li>Create video tutorials for common tasks</li>
+                    </ul>
+
+                    <h3>Post-Launch Monitoring (Ongoing):</h3>
+                    <ul>
+                        <li>Monitor search analytics (identify failed searches)</li>
+                        <li>Track "Ask IT" tickets related to findability</li>
+                        <li>Quarterly user satisfaction surveys</li>
+                        <li>Monthly content audits (identify outdated content)</li>
+                    </ul>
+
+                    <h3>Success Metrics:</h3>
+                    <ul>
+                        <li><strong>Search success rate:</strong> >80% (up from 50%)</li>
+                        <li><strong>Time to find common resources:</strong> <2 minutes (down from 5+ minutes)</li>
+                        <li><strong>User satisfaction score:</strong> 4.0/5.0 (up from 2.5)</li>
+                        <li><strong>Reduction in "where do I find..." support tickets:</strong> 50% decrease</li>
+                    </ul>
+
+                    <h3>Tools Used:</h3>
+                    <ul>
+                        <li><strong>Microsoft Search:</strong> Built-in search engine</li>
+                        <li><strong>SharePoint hub sites:</strong> Navigation aggregation</li>
+                        <li><strong>Managed metadata:</strong> Taxonomy and tagging</li>
+                        <li><strong>Power Platform:</strong> Custom search interfaces</li>
+                        <li><strong>Analytics:</strong> Microsoft 365 usage reports, Google Analytics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 50px;">
+                <h3>Summary</h3>
+                <p>These answers demonstrate:</p>
+                <ul>
+                    <li><span class="checkmark">✅</span> Deep SharePoint technical knowledge (architecture, permissions, migration)</li>
+                    <li><span class="checkmark">✅</span> Practical problem-solving (troubleshooting, optimization)</li>
+                    <li><span class="checkmark">✅</span> Strategic thinking (governance, information architecture)</li>
+                    <li><span class="checkmark">✅</span> User-centered approach (findability, usability)</li>
+                    <li><span class="checkmark">✅</span> Government sector awareness (compliance, security, accessibility)</li>
+                </ul>
+
+                <h4 style="margin-top: 20px;">Key themes to emphasize in your interview:</h4>
+                <ol>
+                    <li><strong>Security-first mindset</strong> (critical for student financial data)</li>
+                    <li><strong>User-centered design</strong> (make resources findable and accessible)</li>
+                    <li><strong>Governance discipline</strong> (prevent sprawl, maintain consistency)</li>
+                    <li><strong>Systematic troubleshooting</strong> (methodical, documented approach)</li>
+                    <li><strong>Continuous improvement</strong> (monitoring, metrics, iteration)</li>
+                </ol>
+            </div>
+        </main>
+
+        <footer>
+            <p><strong>HESAA Web Developer Interview Preparation</strong></p>
+            <p>SharePoint Administration & Development | Power Automate | Workflow Automation</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Generated: December 2025</p>
+        </footer>
+    </div>
+</body>
+</html>

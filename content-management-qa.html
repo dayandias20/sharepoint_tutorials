@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Content Management & Digital Forms Interview Questions - HESAA Web Developer Position">
+    <title>Content Management & Digital Forms Q&A - HESAA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #d83b01;
+        }
+
+        h1 {
+            color: #d83b01;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #d83b01;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #b83201;
+        }
+
+        .section-divider {
+            font-size: 1.8rem;
+            color: #d83b01;
+            margin: 50px 0 30px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #d83b01;
+            font-weight: 600;
+        }
+
+        .qa-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background-color: #fafafa;
+            border-left: 4px solid #d83b01;
+            border-radius: 4px;
+        }
+
+        .question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #d83b01;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .question-number {
+            background-color: #d83b01;
+            color: white;
+            min-width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .answer {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .answer p {
+            margin-bottom: 15px;
+        }
+
+        .answer ul, .answer ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .answer li {
+            margin-bottom: 10px;
+        }
+
+        .answer strong {
+            color: #d83b01;
+            font-weight: 600;
+        }
+
+        .answer code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .highlight-box {
+            background-color: #fff4f0;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #d83b01;
+        }
+
+        .flow-step {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 3px solid #d83b01;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .question {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="final-questions.html" class="back-button">← Back to Topics</a>
+
+        <header>
+            <h1>Content Management & Digital Forms</h1>
+            <p class="subtitle">Interview Questions & Expert Answers for HESAA Position</p>
+        </header>
+
+        <main>
+            <h2 class="section-divider">Technical Questions</h2>
+
+            <!-- Question 37 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">37</span>
+                    <span>How do you create digital forms with conditional logic that shows/hides fields based on user responses?</span>
+                </div>
+                <div class="answer">
+                    <p>Use <strong>PowerApps</strong>: set field Visible property to <code>If(Dropdown.Selected.Value = "Option A", true, false)</code>.</p>
+                    <p>For SharePoint, use JSON column formatting with conditional display.</p>
+                    <p>Validate required fields only when visible. Test all paths—ensure changing selections properly hides/clears previous fields.</p>
+                </div>
+            </div>
+
+            <!-- Question 38 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">38</span>
+                    <span>Explain your approach to content governance on a large website with multiple content contributors.</span>
+                </div>
+                <div class="answer">
+                    <p>Define <strong>roles/permissions</strong> (contributor vs. approver), create <strong>style guide</strong> and templates, implement <strong>approval workflow</strong> (Power Automate) for sensitive content, set <strong>expiration dates</strong> with quarterly reviews, <strong>train</strong> authors monthly, use <strong>pre-publish checklist</strong> (spell check, alt text, mobile preview), track with <strong>metadata</strong> (Department, Content Type), monitor with monthly reports.</p>
+                </div>
+            </div>
+
+            <!-- Question 39 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">39</span>
+                    <span>How would you implement a document approval workflow with version control?</span>
+                </div>
+                <div class="answer">
+                    <p>Enable <strong>SharePoint versioning</strong> (drafts 0.1, published 1.0) + require check-out.</p>
+                    <p>Create <strong>Power Automate flow</strong> triggered when major version submitted:</p>
+                    <ul>
+                        <li>Send Approval action to manager (7-day timeout)</li>
+                        <li>If approved: set status to "Approved" and publish</li>
+                        <li>If rejected: notify author with comments</li>
+                    </ul>
+                    <p>Version history provides audit trail. For multi-stage, use sequential approvals.</p>
+                </div>
+            </div>
+
+            <!-- Question 40 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">40</span>
+                    <span>Describe your experience with metadata and taxonomy in SharePoint.</span>
+                </div>
+                <div class="answer">
+                    <p>Implemented <strong>Managed Metadata Service</strong> with hierarchical term sets (Departments, Document Types, Program Areas).</p>
+                    <p><strong>Benefits:</strong> Consistent tagging via dropdowns, refinable search, hub site roll-ups.</p>
+                    <p>Set terms as <strong>required metadata</strong>, created <strong>content types</strong> inheriting standard columns.</p>
+                    <p><strong>Best practice:</strong> Limit to 5-7 top categories, use clear labels, train authors, audit regularly.</p>
+                </div>
+            </div>
+
+            <h2 class="section-divider">Scenario-Based Question</h2>
+
+            <!-- Question 41 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">41</span>
+                    <span>HESAA needs to replace paper-based forms with digital forms that automatically route to the correct approvers. Design this solution.</span>
+                </div>
+                <div class="answer">
+                    <h3 style="color: #d83b01; margin-bottom: 15px;">Solution Design:</h3>
+
+                    <div class="flow-step">
+                        <strong>1. Form Creation (PowerApps)</strong><br>
+                        Build canvas app with conditional logic + file uploads. User-friendly interface mirroring paper form.
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>2. Data Storage (SharePoint)</strong><br>
+                        SharePoint list stores submissions with metadata (Type, Status, Approver). Enable versioning and audit logging.
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>3. Routing Logic (Power Automate)</strong><br>
+                        Switch on Request Type:
+                        <ul style="margin-top: 10px;">
+                            <li>&lt;$500 → Manager only</li>
+                            <li>$500-5K → Manager + Finance</li>
+                            <li>Grants → Director + Financial Aid</li>
+                        </ul>
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>4. Notifications & Tracking</strong><br>
+                        Send notifications at each stage, update status, provide Power BI dashboard.
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>5. Integration & Access</strong><br>
+                        Embed in SharePoint/Teams, mobile-responsive, SSO integration.
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong>Benefits:</strong> Eliminates paper, reduces approval time from weeks to days, provides audit trail, enables remote work, generates analytics on bottlenecks.
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 50px;">
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li>✅ PowerApps + Power Automate = powerful digital forms solution</li>
+                    <li>✅ Governance requires: standards + workflows + training</li>
+                    <li>✅ Metadata enables search, filtering, and automated routing</li>
+                    <li>✅ Version control + approval workflows ensure accountability</li>
+                    <li>✅ Digital transformation reduces processing time and costs</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p><strong>HESAA Web Developer Interview Preparation</strong></p>
+            <p>Content Management | Digital Forms | Workflow Automation</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Generated: December 2025</p>
+        </footer>
+    </div>
+</body>
+</html>

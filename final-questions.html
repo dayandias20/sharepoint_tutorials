@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Final Interview Questions - HESAA Web Developer Position">
+    <title>Final Interview Questions - HESAA Web Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #0078d4;
+        }
+
+        h1 {
+            color: #0078d4;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0078d4;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #106ebe;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .topic-card {
+            background-color: #fafafa;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .topic-card:hover {
+            border-color: #0078d4;
+            box-shadow: 0 4px 12px rgba(0, 120, 212, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .topic-card.active {
+            border-color: #0078d4;
+            background-color: #e6f2ff;
+        }
+
+        .topic-card.placeholder {
+            cursor: default;
+            opacity: 0.6;
+        }
+
+        .topic-card.placeholder:hover {
+            border-color: #e0e0e0;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .topic-number {
+            background-color: #0078d4;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .topic-card.placeholder .topic-number {
+            background-color: #999;
+        }
+
+        .topic-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #0078d4;
+            margin-bottom: 10px;
+        }
+
+        .topic-card.placeholder .topic-title {
+            color: #666;
+        }
+
+        .topic-description {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            background-color: #ffc107;
+            color: #333;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Main Q&A</a>
+
+        <header>
+            <h1>Final Interview Questions</h1>
+            <p class="subtitle">Comprehensive Technical & Scenario-Based Questions</p>
+        </header>
+
+        <main>
+            <p style="margin-bottom: 30px; font-size: 1.05rem; color: #666; text-align: center;">
+                Select a topic below to explore in-depth interview questions and expert answers.
+            </p>
+
+            <div class="topics-grid">
+                <!-- Topic 1: SharePoint (Active) -->
+                <a href="sharepoint-qa.html" class="topic-card active">
+                    <div class="topic-number">1</div>
+                    <h2 class="topic-title">SharePoint</h2>
+                    <p class="topic-description">
+                        Comprehensive SharePoint questions covering information architecture, permissions,
+                        migration, performance optimization, governance, and troubleshooting scenarios.
+                    </p>
+                </a>
+
+                <!-- Topic 2: Power Platform (Active) -->
+                <a href="power-platform-qa.html" class="topic-card active">
+                    <div class="topic-number">2</div>
+                    <h2 class="topic-title">Power Platform</h2>
+                    <p class="topic-description">
+                        Deep dive into Power Automate workflows, approval processes, error handling, testing strategies, and automation scenarios.
+                    </p>
+                </a>
+
+                <!-- Topic 3: Angular & Web Development (Placeholder) -->
+                <div class="topic-card placeholder">
+                    <div class="topic-number">3</div>
+                    <h2 class="topic-title">Angular & Web Development</h2>
+                    <p class="topic-description">
+                        Modern web development with Angular, TypeScript, Bootstrap, and responsive design patterns.
+                    </p>
+                    <span class="coming-soon">Coming Soon</span>
+                </div>
+
+                <!-- Topic 4: Accessibility & Compliance (Active) -->
+                <a href="accessibility-qa.html" class="topic-card active">
+                    <div class="topic-number">4</div>
+                    <h2 class="topic-title">Accessibility & Compliance</h2>
+                    <p class="topic-description">
+                        WCAG 2.1 AA standards, screen reader testing, ARIA labels, keyboard navigation, and PDF accessibility.
+                    </p>
+                </a>
+
+                <!-- Topic 5: Content Management & Digital Forms (Active) -->
+                <a href="content-management-qa.html" class="topic-card active">
+                    <div class="topic-number">5</div>
+                    <h2 class="topic-title">Content Management & Digital Forms</h2>
+                    <p class="topic-description">
+                        Conditional logic forms, content governance, approval workflows, metadata management, and digital transformation.
+                    </p>
+                </a>
+            </div>
+        </main>
+
+        <footer>
+            <p><strong>HESAA Web Developer Interview Preparation</strong></p>
+            <p>SharePoint Administration & Development | Power Automate | Workflow Automation</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Generated: December 2025</p>
+        </footer>
+    </div>
+</body>
+</html>

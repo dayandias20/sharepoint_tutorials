@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Power Automate & Workflow Automation Interview Questions - HESAA Web Developer Position">
+    <title>Power Automate Interview Q&A - HESAA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #742774;
+        }
+
+        h1 {
+            color: #742774;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #742774;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #5a1d5a;
+        }
+
+        .section-divider {
+            font-size: 1.8rem;
+            color: #742774;
+            margin: 50px 0 30px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #742774;
+            font-weight: 600;
+        }
+
+        .qa-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background-color: #fafafa;
+            border-left: 4px solid #742774;
+            border-radius: 4px;
+        }
+
+        .question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #742774;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .question-number {
+            background-color: #742774;
+            color: white;
+            min-width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .answer {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .answer h3 {
+            color: #742774;
+            font-size: 1.2rem;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .answer h4 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .answer p {
+            margin-bottom: 15px;
+        }
+
+        .answer ul, .answer ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .answer li {
+            margin-bottom: 10px;
+        }
+
+        .answer strong {
+            color: #742774;
+            font-weight: 600;
+        }
+
+        .code-block {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 15px 0;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .highlight-box {
+            background-color: #f3e5f5;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #742774;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .success-box {
+            background-color: #d4edda;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .flow-step {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 3px solid #742774;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .question {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="final-questions.html" class="back-button">← Back to Topics</a>
+
+        <header>
+            <h1>Power Automate & Workflow Automation</h1>
+            <p class="subtitle">Interview Questions & Expert Answers for HESAA Position</p>
+        </header>
+
+        <main>
+            <h2 class="section-divider">Technical Questions</h2>
+
+            <!-- Question 11 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">11</span>
+                    <span>Design a Power Automate flow for HESAA's grant application approval process with multiple approval stages and conditional routing.</span>
+                </div>
+                <div class="answer">
+                    <p>I'd use a <strong>sequential approval flow</strong> with conditional logic. The flow triggers when a grant application is submitted to a SharePoint list, then routes through three stages:</p>
+
+                    <div class="flow-step">
+                        <strong>Stage 1:</strong> Program Manager approval
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>Stage 2:</strong> Financial Officer approval (if amount >$10K)
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>Stage 3:</strong> Director final approval
+                    </div>
+
+                    <p>Each stage uses the <strong>Approval</strong> action with timeout settings (5 business days). If rejected at any stage, the flow sends a notification to the applicant and updates the application status. I'd use <strong>parallel branches</strong> for notifications and <strong>scope actions</strong> to organize stages, making the flow easier to maintain.</p>
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">12</span>
+                    <span>How do you handle errors and failures in Power Automate workflows? Give specific examples.</span>
+                </div>
+                <div class="answer">
+                    <p>I use <strong>Try-Catch patterns</strong> with Scope actions: wrap risky operations in a "Try" scope, then add a parallel "Catch" scope configured to run only "if Try has failed."</p>
+
+                    <div class="highlight-box">
+                        <h4>Example: Document Approval Flow</h4>
+                        <p>If the "Send Email" action fails due to invalid recipient, the Catch scope:</p>
+                        <ul>
+                            <li>Logs the error to a SharePoint list</li>
+                            <li>Notifies the admin</li>
+                            <li>Sets the item status to "Error - Needs Review"</li>
+                        </ul>
+                    </div>
+
+                    <p>I also enable <strong>run-after configuration</strong> on critical actions and implement <strong>retry policies</strong> (3 attempts with exponential backoff) for API calls that might timeout.</p>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">13</span>
+                    <span>Explain how you would create a workflow that routes student assistance applications to different departments based on program type.</span>
+                </div>
+                <div class="answer">
+                    <p>I'd create a <strong>condition-based routing flow</strong> triggered when an application is submitted. Use a <strong>Switch</strong> action on the "Program Type" field with cases for each program:</p>
+
+                    <div class="flow-step">
+                        <strong>NJ CLASS</strong> → Financial Aid Team
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>EOF</strong> → Student Services
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>TAG</strong> → Grant Processing
+                    </div>
+
+                    <p>Each branch then:</p>
+                    <ol>
+                        <li>Assigns the item to the appropriate SharePoint group</li>
+                        <li>Sends a customized notification email to that department's queue</li>
+                        <li>Creates a task in their department's Planner board</li>
+                    </ol>
+
+                    <p>I'd include a <strong>default case</strong> for unknown program types that routes to a general intake team for manual review.</p>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">14</span>
+                    <span>How do you test and debug complex Power Automate flows before deploying to production?</span>
+                </div>
+                <div class="answer">
+                    <p>I follow a <strong>three-tier testing approach:</strong></p>
+
+                    <h3>1. Development</h3>
+                    <p>Test with sample data using the "Test" button, checking each action's inputs/outputs in the run history.</p>
+
+                    <h3>2. Staging</h3>
+                    <p>Deploy to a test SharePoint site with real-like data and have 2-3 users perform end-to-end testing.</p>
+
+                    <h3>3. User Acceptance Testing</h3>
+                    <p>Have business owners test critical scenarios.</p>
+
+                    <div class="highlight-box">
+                        <h4>Debugging Techniques:</h4>
+                        <ul>
+                            <li>Use <strong>Compose</strong> actions as breakpoints to inspect variable values</li>
+                            <li>Enable <strong>detailed logging</strong> by adding "Log to SharePoint" actions at key stages</li>
+                            <li>Use <strong>Parallel branches</strong> to send debug emails showing current flow state</li>
+                            <li>Check the <strong>28-day run history</strong> for patterns in failures</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 15 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">15</span>
+                    <span>Describe your experience with scheduled flows versus event-driven flows. When do you use each?</span>
+                </div>
+                <div class="answer">
+                    <div class="success-box">
+                        <h4>Event-Driven Flows</h4>
+                        <p><strong>Triggered by:</strong> SharePoint item creation, email arrival, Teams message</p>
+                        <p><strong>Best for:</strong> Real-time processes like approval workflows or notifications—they execute immediately when something happens.</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4>Scheduled Flows</h4>
+                        <p><strong>Triggered by:</strong> Recurrence (e.g., daily, weekly)</p>
+                        <p><strong>Best for:</strong> Batch operations like nightly report generation, weekly inactive site cleanup, or daily deadline reminders.</p>
+                    </div>
+
+                    <h3>Example from Experience:</h3>
+                    <p>At my university, I used:</p>
+                    <ul>
+                        <li><strong>Event-driven flows</strong> for grant submission approvals (instant response)</li>
+                        <li><strong>Scheduled flows</strong> to check expiring documents every Monday at 8 AM and send reminder emails</li>
+                    </ul>
+
+                    <p><strong>Scheduled flows</strong> are also better for API rate-limiting scenarios where you need to process items in controlled batches.</p>
+                </div>
+            </div>
+
+            <!-- Question 16 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">16</span>
+                    <span>How would you create a workflow that automatically notifies stakeholders when deadlines are approaching?</span>
+                </div>
+                <div class="answer">
+                    <p>I'd create a <strong>scheduled flow</strong> that runs daily at 7 AM:</p>
+
+                    <div class="flow-step">
+                        <strong>Step 1: Query Items</strong><br>
+                        Uses <strong>Get Items</strong> with filter:<br>
+                        <code>DueDate le addDays(utcNow(), 7) and Status ne 'Completed'</code><br>
+                        (finds items due within 7 days)
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>Step 2: Loop Through Results</strong><br>
+                        Uses <strong>Apply to each</strong> to iterate through results
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>Step 3: Calculate Days Remaining</strong><br>
+                        Uses <strong>addDays</strong> and <strong>dateDifference</strong> expressions
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>Step 4: Send Tiered Notifications</strong><br>
+                        Uses <strong>Switch/Condition</strong> for urgency levels:
+                        <ul>
+                            <li><strong>7 days:</strong> Informational email</li>
+                            <li><strong>3 days:</strong> High-priority email + Teams notification</li>
+                            <li><strong>1 day:</strong> Urgent email to stakeholder + their manager</li>
+                        </ul>
+                    </div>
+
+                    <p>I'd store "Last Notification Sent" in SharePoint to avoid duplicate reminders.</p>
+                </div>
+            </div>
+
+            <h2 class="section-divider">Scenario-Based Questions</h2>
+
+            <!-- Question 17 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">17</span>
+                    <span>HESAA needs to automate their employee onboarding process with document collection, approvals, and notifications. Design this solution.</span>
+                </div>
+                <div class="answer">
+                    <h3>Solution Design:</h3>
+
+                    <div class="highlight-box">
+                        <h4>Trigger:</h4>
+                        <p>When HR adds a new employee to the "Onboarding" SharePoint list</p>
+                    </div>
+
+                    <h3>Flow Steps:</h3>
+
+                    <div class="flow-step">
+                        <strong>1. Send Welcome Email</strong><br>
+                        To new employee with personalized onboarding checklist and link to PowerApp form
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>2. Create Tasks</strong><br>
+                        Auto-generate tasks in Planner for:
+                        <ul>
+                            <li>IT (setup account)</li>
+                            <li>Facilities (assign workspace)</li>
+                            <li>Manager (schedule orientation)</li>
+                        </ul>
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>3. Document Collection</strong><br>
+                        Send adaptive card via email/Teams requesting:
+                        <ul>
+                            <li>I-9</li>
+                            <li>W-4</li>
+                            <li>Direct deposit form</li>
+                            <li>Emergency contact</li>
+                        </ul>
+                        Employee uploads to OneDrive folder (auto-created by flow)
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>4. Approval Stage</strong><br>
+                        Once all documents submitted, trigger approval to HR Manager. If rejected, notify employee with feedback.
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>5. Parallel Notifications</strong><br>
+                        On approval, send notifications to:
+                        <ul>
+                            <li>IT to provision accounts</li>
+                            <li>Facilities to prepare workspace</li>
+                            <li>Manager confirming start date</li>
+                        </ul>
+                    </div>
+
+                    <div class="flow-step">
+                        <strong>6. Status Dashboard</strong><br>
+                        Update employee record with onboarding progress percentage; create a Power BI report showing all onboarding status
+                    </div>
+
+                    <div class="success-box">
+                        <h4>Tech Stack Used:</h4>
+                        <p>Power Automate + SharePoint list + PowerApps form + OneDrive + Planner + Adaptive Cards</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 18 -->
+            <div class="qa-section">
+                <div class="question">
+                    <span class="question-number">18</span>
+                    <span>A critical workflow is failing intermittently. How do you troubleshoot and fix it?</span>
+                </div>
+                <div class="answer">
+                    <h3>Troubleshooting Approach:</h3>
+
+                    <h4>Step 1: Identify the Pattern (15 min)</h4>
+                    <ul>
+                        <li>Check <strong>Flow Run History</strong> for the last 20 runs—look for common failure points</li>
+                        <li>Note if failures happen at specific times (timeouts during high-load periods?) or with specific data (special characters breaking filters?)</li>
+                        <li>Export failed run details to Excel and analyze patterns</li>
+                    </ul>
+
+                    <h4>Step 2: Examine Error Messages (15 min)</h4>
+                    <ul>
+                        <li>Drill into failed runs and identify the exact action failing</li>
+                        <li>Common culprits:
+                            <ul>
+                                <li>API timeouts (429 errors)</li>
+                                <li>Permission issues (401/403)</li>
+                                <li>Null reference errors (missing data)</li>
+                                <li>Concurrency conflicts</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Step 3: Reproduce & Debug (30 min)</h4>
+                    <ul>
+                        <li>Use <strong>Test</strong> mode with the same data that caused failures</li>
+                        <li>Add <strong>Compose</strong> actions before/after the failing action to inspect input/output values</li>
+                        <li>Check for issues like:
+                            <ul>
+                                <li>Incorrect filter syntax</li>
+                                <li>Missing null checks (<code>if(empty(triggerOutputs()?['body/field'])...)</code>)</li>
+                                <li>Exceeding SharePoint threshold (5000 items)</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Step 4: Implement Fix</h4>
+                    <div class="warning-box">
+                        <strong>If Timeout:</strong> Add retry policy (3 attempts, exponential backoff) or split into smaller batches
+                    </div>
+                    <div class="warning-box">
+                        <strong>If Permission:</strong> Verify connection credentials and SharePoint permissions
+                    </div>
+                    <div class="warning-box">
+                        <strong>If Data Issue:</strong> Add validation/null checks before the action
+                    </div>
+                    <div class="warning-box">
+                        <strong>If Concurrency:</strong> Enable flow concurrency control or add delay actions
+                    </div>
+
+                    <h4>Step 5: Monitor Post-Fix (1 week)</h4>
+                    <ul>
+                        <li>Enable email notifications for flow failures</li>
+                        <li>Review run history daily for 3 days, then weekly</li>
+                        <li>Document the issue and fix in runbook for future reference</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4>Example Fix:</h4>
+                        <p><strong>Problem:</strong> A grant approval flow was failing intermittently. Root cause: when applicants left the "Department" field blank, the flow couldn't route correctly.</p>
+                        <p><strong>Solution:</strong> Added a condition to check if Department is null—if yes, default to "General Intake" queue and notify applicant to update their application.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-box" style="margin-top: 50px;">
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li>✅ Use structured approvals with clear stages and timeouts</li>
+                    <li>✅ Always implement error handling (try-catch patterns)</li>
+                    <li>✅ Test thoroughly in dev/staging before production</li>
+                    <li>✅ Choose scheduled vs. event-driven based on timing needs</li>
+                    <li>✅ Document workflows and maintain run logs for troubleshooting</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p><strong>HESAA Web Developer Interview Preparation</strong></p>
+            <p>Power Automate | Workflow Automation | Business Process Automation</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Generated: December 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
