@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MS SQL Server Quick Reference - HESAA Interview Preparation">
+    <title>MS SQL Server Overview - HESAA Interview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #cc0000;
+        }
+
+        h1 {
+            color: #cc0000;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #cc0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #a00000;
+        }
+
+        .section-divider {
+            font-size: 1.8rem;
+            color: #cc0000;
+            margin: 50px 0 30px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #cc0000;
+            font-weight: 600;
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .content-section h3 {
+            color: #cc0000;
+            font-size: 1.3rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .content-section h4 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+        }
+
+        .content-section strong {
+            color: #cc0000;
+            font-weight: 600;
+        }
+
+        .code-block {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .code-block .keyword {
+            color: #569cd6;
+        }
+
+        .code-block .string {
+            color: #ce9178;
+        }
+
+        .code-block .comment {
+            color: #6a9955;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #cc0000;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .highlight-box {
+            background-color: #ffe6e6;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #cc0000;
+        }
+
+        .tip-box {
+            background-color: #e7f3ff;
+            padding: 18px;
+            border-radius: 4px;
+            margin: 15px 0;
+            border-left: 4px solid #0078d4;
+        }
+
+        .example-box {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+            border-left: 4px solid #666;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Main</a>
+
+        <header>
+            <h1>MS SQL Server Quick Reference</h1>
+            <p class="subtitle">Essential Concepts for HESAA Web Developer Position</p>
+        </header>
+
+        <main>
+            <h2 class="section-divider">1. Fundamentals</h2>
+
+            <div class="content-section">
+                <h3>What is MS SQL Server?</h3>
+                <p>Microsoft SQL Server is a relational database management system (RDBMS) developed by Microsoft. It stores and retrieves data as requested by other software applications.</p>
+
+                <h3>Core Components</h3>
+                <ul>
+                    <li><strong>Database:</strong> Container for tables, views, stored procedures, and other objects</li>
+                    <li><strong>Table:</strong> Structured collection of data organized in rows and columns</li>
+                    <li><strong>Row (Record):</strong> Single entry in a table</li>
+                    <li><strong>Column (Field):</strong> Attribute of data with a specific data type</li>
+                </ul>
+
+                <h3>Common Data Types</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>INT</strong></td>
+                            <td>Integer numbers</td>
+                            <td>123, -456</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VARCHAR(n)</strong></td>
+                            <td>Variable-length string (up to n characters)</td>
+                            <td>'John Doe'</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NVARCHAR(n)</strong></td>
+                            <td>Unicode variable-length string</td>
+                            <td>'José García'</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DECIMAL(p,s)</strong></td>
+                            <td>Fixed precision and scale numbers</td>
+                            <td>123.45</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DATE</strong></td>
+                            <td>Date values</td>
+                            <td>'2025-12-07'</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DATETIME</strong></td>
+                            <td>Date and time values</td>
+                            <td>'2025-12-07 14:30:00'</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BIT</strong></td>
+                            <td>Boolean (0 or 1)</td>
+                            <td>0, 1</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Keys & Constraints</h3>
+                <ul>
+                    <li><strong>Primary Key:</strong> Uniquely identifies each row in a table (cannot be NULL)</li>
+                    <li><strong>Foreign Key:</strong> Links two tables together, references primary key of another table</li>
+                    <li><strong>UNIQUE:</strong> Ensures all values in a column are different</li>
+                    <li><strong>NOT NULL:</strong> Ensures a column cannot have NULL values</li>
+                    <li><strong>CHECK:</strong> Ensures values in a column meet a specific condition</li>
+                    <li><strong>DEFAULT:</strong> Sets a default value for a column when no value is specified</li>
+                </ul>
+            </div>
+
+            <h2 class="section-divider">2. Basic SQL Operations (CRUD)</h2>
+
+            <div class="content-section">
+                <h3>CREATE - Creating Tables</h3>
+                <div class="code-block"><span class="keyword">CREATE TABLE</span> Students (
+    StudentID <span class="keyword">INT PRIMARY KEY IDENTITY</span>(1,1),
+    FirstName <span class="keyword">NVARCHAR</span>(50) <span class="keyword">NOT NULL</span>,
+    LastName <span class="keyword">NVARCHAR</span>(50) <span class="keyword">NOT NULL</span>,
+    Email <span class="keyword">NVARCHAR</span>(100) <span class="keyword">UNIQUE</span>,
+    EnrollmentDate <span class="keyword">DATE DEFAULT GETDATE</span>(),
+    GPA <span class="keyword">DECIMAL</span>(3,2) <span class="keyword">CHECK</span> (GPA >= 0.0 <span class="keyword">AND</span> GPA <= 4.0)
+);</div>
+
+                <h3>INSERT - Adding Data</h3>
+                <div class="code-block"><span class="comment">-- Insert single row</span>
+<span class="keyword">INSERT INTO</span> Students (FirstName, LastName, Email, GPA)
+<span class="keyword">VALUES</span> (<span class="string">'John'</span>, <span class="string">'Doe'</span>, <span class="string">'john.doe@example.com'</span>, 3.75);
+
+<span class="comment">-- Insert multiple rows</span>
+<span class="keyword">INSERT INTO</span> Students (FirstName, LastName, Email, GPA)
+<span class="keyword">VALUES</span>
+    (<span class="string">'Jane'</span>, <span class="string">'Smith'</span>, <span class="string">'jane.smith@example.com'</span>, 3.85),
+    (<span class="string">'Bob'</span>, <span class="string">'Johnson'</span>, <span class="string">'bob.j@example.com'</span>, 3.50);</div>
+
+                <h3>SELECT - Retrieving Data</h3>
+                <div class="code-block"><span class="comment">-- Select all columns</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> Students;
+
+<span class="comment">-- Select specific columns</span>
+<span class="keyword">SELECT</span> FirstName, LastName, GPA <span class="keyword">FROM</span> Students;
+
+<span class="comment">-- Select with WHERE clause</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> Students
+<span class="keyword">WHERE</span> GPA >= 3.5;
+
+<span class="comment">-- Select with ORDER BY</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> Students
+<span class="keyword">ORDER BY</span> GPA <span class="keyword">DESC</span>;
+
+<span class="comment">-- Select with LIKE (pattern matching)</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> Students
+<span class="keyword">WHERE</span> Email <span class="keyword">LIKE</span> <span class="string">'%@example.com'</span>;</div>
+
+                <h3>UPDATE - Modifying Data</h3>
+                <div class="code-block"><span class="keyword">UPDATE</span> Students
+<span class="keyword">SET</span> GPA = 3.90
+<span class="keyword">WHERE</span> StudentID = 1;
+
+<span class="comment">-- Update multiple columns</span>
+<span class="keyword">UPDATE</span> Students
+<span class="keyword">SET</span> FirstName = <span class="string">'Jonathan'</span>, Email = <span class="string">'jonathan.doe@example.com'</span>
+<span class="keyword">WHERE</span> StudentID = 1;</div>
+
+                <h3>DELETE - Removing Data</h3>
+                <div class="code-block"><span class="comment">-- Delete specific rows</span>
+<span class="keyword">DELETE FROM</span> Students
+<span class="keyword">WHERE</span> StudentID = 5;
+
+<span class="comment">-- Delete all rows (use with caution!)</span>
+<span class="keyword">DELETE FROM</span> Students;</div>
+
+                <div class="tip-box">
+                    <strong>⚠️ Important:</strong> Always use WHERE clause with UPDATE and DELETE to avoid modifying/deleting all rows unintentionally!
+                </div>
+            </div>
+
+            <h2 class="section-divider">3. JOINs - Combining Data from Multiple Tables</h2>
+
+            <div class="content-section">
+                <h3>Understanding JOINs</h3>
+                <p>JOINs combine rows from two or more tables based on a related column between them.</p>
+
+                <h3>INNER JOIN</h3>
+                <p>Returns only matching rows from both tables.</p>
+                <div class="code-block"><span class="keyword">SELECT</span> Students.FirstName, Students.LastName, Courses.CourseName
+<span class="keyword">FROM</span> Students
+<span class="keyword">INNER JOIN</span> Enrollments <span class="keyword">ON</span> Students.StudentID = Enrollments.StudentID
+<span class="keyword">INNER JOIN</span> Courses <span class="keyword">ON</span> Enrollments.CourseID = Courses.CourseID;</div>
+
+                <h3>LEFT JOIN (LEFT OUTER JOIN)</h3>
+                <p>Returns all rows from the left table, and matching rows from the right table. NULL for non-matching right table rows.</p>
+                <div class="code-block"><span class="comment">-- Get all students, including those not enrolled in courses</span>
+<span class="keyword">SELECT</span> Students.FirstName, Students.LastName, Courses.CourseName
+<span class="keyword">FROM</span> Students
+<span class="keyword">LEFT JOIN</span> Enrollments <span class="keyword">ON</span> Students.StudentID = Enrollments.StudentID
+<span class="keyword">LEFT JOIN</span> Courses <span class="keyword">ON</span> Enrollments.CourseID = Courses.CourseID;</div>
+
+                <h3>RIGHT JOIN (RIGHT OUTER JOIN)</h3>
+                <p>Returns all rows from the right table, and matching rows from the left table.</p>
+                <div class="code-block"><span class="keyword">SELECT</span> Students.FirstName, Courses.CourseName
+<span class="keyword">FROM</span> Students
+<span class="keyword">RIGHT JOIN</span> Enrollments <span class="keyword">ON</span> Students.StudentID = Enrollments.StudentID;</div>
+
+                <h3>FULL OUTER JOIN</h3>
+                <p>Returns all rows from both tables, with NULL where there's no match.</p>
+                <div class="code-block"><span class="keyword">SELECT</span> Students.FirstName, Courses.CourseName
+<span class="keyword">FROM</span> Students
+<span class="keyword">FULL OUTER JOIN</span> Enrollments <span class="keyword">ON</span> Students.StudentID = Enrollments.StudentID;</div>
+
+                <h3>CROSS JOIN</h3>
+                <p>Returns the Cartesian product of both tables (all possible combinations).</p>
+                <div class="code-block"><span class="keyword">SELECT</span> Students.FirstName, Courses.CourseName
+<span class="keyword">FROM</span> Students
+<span class="keyword">CROSS JOIN</span> Courses;</div>
+
+                <div class="example-box">
+                    <h4>JOIN Visual Summary</h4>
+                    <ul>
+                        <li><strong>INNER JOIN:</strong> Only matching records ∩</li>
+                        <li><strong>LEFT JOIN:</strong> All from left + matching from right (Left table ∪ Match)</li>
+                        <li><strong>RIGHT JOIN:</strong> All from right + matching from left (Right table ∪ Match)</li>
+                        <li><strong>FULL OUTER JOIN:</strong> All from both tables (Left ∪ Right)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 class="section-divider">4. Aggregation & Grouping</h2>
+
+            <div class="content-section">
+                <h3>Aggregate Functions</h3>
+                <div class="code-block"><span class="comment">-- COUNT: Number of rows</span>
+<span class="keyword">SELECT COUNT</span>(*) <span class="keyword">AS</span> TotalStudents <span class="keyword">FROM</span> Students;
+
+<span class="comment">-- AVG: Average value</span>
+<span class="keyword">SELECT AVG</span>(GPA) <span class="keyword">AS</span> AverageGPA <span class="keyword">FROM</span> Students;
+
+<span class="comment">-- SUM: Total sum</span>
+<span class="keyword">SELECT SUM</span>(Credits) <span class="keyword">AS</span> TotalCredits <span class="keyword">FROM</span> Courses;
+
+<span class="comment">-- MIN and MAX</span>
+<span class="keyword">SELECT MIN</span>(GPA) <span class="keyword">AS</span> LowestGPA, <span class="keyword">MAX</span>(GPA) <span class="keyword">AS</span> HighestGPA
+<span class="keyword">FROM</span> Students;</div>
+
+                <h3>GROUP BY</h3>
+                <p>Groups rows that have the same values in specified columns.</p>
+                <div class="code-block"><span class="comment">-- Count students by enrollment year</span>
+<span class="keyword">SELECT YEAR</span>(EnrollmentDate) <span class="keyword">AS</span> Year, <span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> StudentCount
+<span class="keyword">FROM</span> Students
+<span class="keyword">GROUP BY YEAR</span>(EnrollmentDate);
+
+<span class="comment">-- Average GPA by major</span>
+<span class="keyword">SELECT</span> Major, <span class="keyword">AVG</span>(GPA) <span class="keyword">AS</span> AvgGPA
+<span class="keyword">FROM</span> Students
+<span class="keyword">GROUP BY</span> Major;</div>
+
+                <h3>HAVING</h3>
+                <p>Filters groups (used with GROUP BY). WHERE filters rows before grouping, HAVING filters after grouping.</p>
+                <div class="code-block"><span class="comment">-- Find majors with average GPA > 3.5</span>
+<span class="keyword">SELECT</span> Major, <span class="keyword">AVG</span>(GPA) <span class="keyword">AS</span> AvgGPA
+<span class="keyword">FROM</span> Students
+<span class="keyword">GROUP BY</span> Major
+<span class="keyword">HAVING AVG</span>(GPA) > 3.5;</div>
+            </div>
+
+            <h2 class="section-divider">5. ACID Properties</h2>
+
+            <div class="content-section">
+                <p>ACID ensures database transactions are processed reliably:</p>
+
+                <div class="highlight-box">
+                    <h3>A - Atomicity</h3>
+                    <p><strong>All or Nothing:</strong> A transaction either completes entirely or not at all. If any part fails, the entire transaction is rolled back.</p>
+                    <div class="example-box">
+                        <strong>Example:</strong> Transferring $100 from Account A to Account B requires two operations: deduct from A, add to B. If adding to B fails, the deduction from A must be rolled back.
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>C - Consistency</h3>
+                    <p><strong>Valid State:</strong> A transaction brings the database from one valid state to another, maintaining all defined rules (constraints, triggers, cascades).</p>
+                    <div class="example-box">
+                        <strong>Example:</strong> If a CHECK constraint requires GPA between 0.0 and 4.0, no transaction can insert a GPA of 5.0.
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>I - Isolation</h3>
+                    <p><strong>Concurrent Execution:</strong> Concurrent transactions are isolated from each other. Intermediate state of one transaction is invisible to others.</p>
+                    <div class="example-box">
+                        <strong>Example:</strong> If two users update the same student record simultaneously, one transaction must wait for the other to complete to avoid conflicts.
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>D - Durability</h3>
+                    <p><strong>Permanent Changes:</strong> Once a transaction is committed, it remains committed even in case of system failure (crash, power loss).</p>
+                    <div class="example-box">
+                        <strong>Example:</strong> After committing a student's grade, that grade is permanently stored and will survive server restarts or crashes.
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-divider">6. Transactions</h2>
+
+            <div class="content-section">
+                <h3>Transaction Control</h3>
+                <div class="code-block"><span class="keyword">BEGIN TRANSACTION</span>;
+
+    <span class="keyword">UPDATE</span> Accounts <span class="keyword">SET</span> Balance = Balance - 100 <span class="keyword">WHERE</span> AccountID = 1;
+    <span class="keyword">UPDATE</span> Accounts <span class="keyword">SET</span> Balance = Balance + 100 <span class="keyword">WHERE</span> AccountID = 2;
+
+    <span class="comment">-- If all operations succeed</span>
+    <span class="keyword">COMMIT TRANSACTION</span>;
+
+    <span class="comment">-- If any operation fails</span>
+    <span class="keyword">ROLLBACK TRANSACTION</span>;</div>
+
+                <h3>Error Handling with TRY...CATCH</h3>
+                <div class="code-block"><span class="keyword">BEGIN TRY</span>
+    <span class="keyword">BEGIN TRANSACTION</span>;
+
+        <span class="keyword">UPDATE</span> Accounts <span class="keyword">SET</span> Balance = Balance - 100 <span class="keyword">WHERE</span> AccountID = 1;
+        <span class="keyword">UPDATE</span> Accounts <span class="keyword">SET</span> Balance = Balance + 100 <span class="keyword">WHERE</span> AccountID = 2;
+
+    <span class="keyword">COMMIT TRANSACTION</span>;
+<span class="keyword">END TRY</span>
+<span class="keyword">BEGIN CATCH</span>
+    <span class="keyword">ROLLBACK TRANSACTION</span>;
+    <span class="keyword">PRINT</span> <span class="string">'Transaction failed: '</span> + <span class="keyword">ERROR_MESSAGE</span>();
+<span class="keyword">END CATCH</span>;</div>
+            </div>
+
+            <h2 class="section-divider">7. Indexes</h2>
+
+            <div class="content-section">
+                <h3>What are Indexes?</h3>
+                <p>Indexes improve query performance by creating a data structure that allows faster data retrieval. Think of it like a book's index—instead of reading every page to find a topic, you check the index.</p>
+
+                <h3>Clustered Index</h3>
+                <ul>
+                    <li>Determines the physical order of data in the table</li>
+                    <li>One per table (usually on primary key)</li>
+                    <li>Faster for range queries</li>
+                </ul>
+                <div class="code-block"><span class="keyword">CREATE CLUSTERED INDEX</span> IX_Students_StudentID
+<span class="keyword">ON</span> Students(StudentID);</div>
+
+                <h3>Non-Clustered Index</h3>
+                <ul>
+                    <li>Separate structure from table data</li>
+                    <li>Multiple per table (up to 999 in SQL Server)</li>
+                    <li>Faster for specific column lookups</li>
+                </ul>
+                <div class="code-block"><span class="keyword">CREATE NONCLUSTERED INDEX</span> IX_Students_Email
+<span class="keyword">ON</span> Students(Email);</div>
+
+                <div class="tip-box">
+                    <strong>When to Index:</strong> Columns frequently used in WHERE, JOIN, ORDER BY clauses. Avoid over-indexing as it slows down INSERT/UPDATE/DELETE operations.
+                </div>
+            </div>
+
+            <h2 class="section-divider">8. Views</h2>
+
+            <div class="content-section">
+                <h3>What are Views?</h3>
+                <p>A view is a virtual table based on a SELECT query. It doesn't store data itself but provides a way to simplify complex queries.</p>
+
+                <div class="code-block"><span class="comment">-- Create a view showing student enrollment summary</span>
+<span class="keyword">CREATE VIEW</span> vw_StudentEnrollmentSummary
+<span class="keyword">AS</span>
+<span class="keyword">SELECT</span>
+    s.StudentID,
+    s.FirstName + <span class="string">' '</span> + s.LastName <span class="keyword">AS</span> FullName,
+    <span class="keyword">COUNT</span>(e.CourseID) <span class="keyword">AS</span> CourseCount,
+    <span class="keyword">AVG</span>(c.Credits) <span class="keyword">AS</span> AvgCredits
+<span class="keyword">FROM</span> Students s
+<span class="keyword">LEFT JOIN</span> Enrollments e <span class="keyword">ON</span> s.StudentID = e.StudentID
+<span class="keyword">LEFT JOIN</span> Courses c <span class="keyword">ON</span> e.CourseID = c.CourseID
+<span class="keyword">GROUP BY</span> s.StudentID, s.FirstName, s.LastName;
+
+<span class="comment">-- Query the view like a table</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> vw_StudentEnrollmentSummary
+<span class="keyword">WHERE</span> CourseCount > 3;</div>
+
+                <h3>Benefits of Views</h3>
+                <ul>
+                    <li><strong>Simplification:</strong> Hide complex JOINs and business logic</li>
+                    <li><strong>Security:</strong> Expose only specific columns/rows to users</li>
+                    <li><strong>Abstraction:</strong> Insulate applications from schema changes</li>
+                </ul>
+            </div>
+
+            <h2 class="section-divider">9. Stored Procedures</h2>
+
+            <div class="content-section">
+                <h3>What are Stored Procedures?</h3>
+                <p>Precompiled SQL code stored in the database that can accept parameters and return results.</p>
+
+                <div class="code-block"><span class="comment">-- Create a stored procedure to enroll a student</span>
+<span class="keyword">CREATE PROCEDURE</span> sp_EnrollStudent
+    <span class="keyword">@StudentID INT</span>,
+    <span class="keyword">@CourseID INT</span>,
+    <span class="keyword">@EnrollmentDate DATE</span>
+<span class="keyword">AS</span>
+<span class="keyword">BEGIN</span>
+    <span class="keyword">BEGIN TRY</span>
+        <span class="keyword">INSERT INTO</span> Enrollments (StudentID, CourseID, EnrollmentDate)
+        <span class="keyword">VALUES</span> (@StudentID, @CourseID, @EnrollmentDate);
+
+        <span class="keyword">PRINT</span> <span class="string">'Student enrolled successfully.'</span>;
+    <span class="keyword">END TRY</span>
+    <span class="keyword">BEGIN CATCH</span>
+        <span class="keyword">PRINT</span> <span class="string">'Enrollment failed: '</span> + <span class="keyword">ERROR_MESSAGE</span>();
+    <span class="keyword">END CATCH</span>
+<span class="keyword">END</span>;
+
+<span class="comment">-- Execute the stored procedure</span>
+<span class="keyword">EXEC</span> sp_EnrollStudent
+    <span class="keyword">@StudentID</span> = 1,
+    <span class="keyword">@CourseID</span> = 101,
+    <span class="keyword">@EnrollmentDate</span> = <span class="string">'2025-01-15'</span>;</div>
+
+                <h3>Benefits</h3>
+                <ul>
+                    <li><strong>Performance:</strong> Precompiled execution plans</li>
+                    <li><strong>Security:</strong> Control access to data through procedures</li>
+                    <li><strong>Reusability:</strong> Encapsulate business logic</li>
+                    <li><strong>Reduced network traffic:</strong> Execute multiple statements in one call</li>
+                </ul>
+            </div>
+
+            <h2 class="section-divider">10. Normalization</h2>
+
+            <div class="content-section">
+                <h3>What is Normalization?</h3>
+                <p>The process of organizing data to reduce redundancy and improve data integrity.</p>
+
+                <h3>Normal Forms</h3>
+
+                <div class="highlight-box">
+                    <h4>1NF (First Normal Form)</h4>
+                    <ul>
+                        <li>Eliminate repeating groups</li>
+                        <li>Each column contains atomic (indivisible) values</li>
+                        <li>Each column has a unique name</li>
+                        <li>Order doesn't matter</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>2NF (Second Normal Form)</h4>
+                    <ul>
+                        <li>Must be in 1NF</li>
+                        <li>All non-key columns fully depend on the primary key</li>
+                        <li>Eliminate partial dependencies</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>3NF (Third Normal Form)</h4>
+                    <ul>
+                        <li>Must be in 2NF</li>
+                        <li>No transitive dependencies (non-key columns don't depend on other non-key columns)</li>
+                        <li>All columns depend only on the primary key</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>Denormalized (Bad):</h4>
+                    <p>StudentID | StudentName | CourseID | CourseName | InstructorName</p>
+                    <p>1 | John Doe | 101 | Math | Dr. Smith</p>
+                    <p>1 | John Doe | 102 | English | Dr. Jones</p>
+                    <p><em>Problem: Student name repeats, causes update anomalies</em></p>
+
+                    <h4>Normalized (Good):</h4>
+                    <p><strong>Students:</strong> StudentID | StudentName</p>
+                    <p><strong>Courses:</strong> CourseID | CourseName | InstructorName</p>
+                    <p><strong>Enrollments:</strong> EnrollmentID | StudentID | CourseID</p>
+                </div>
+            </div>
+
+            <h2 class="section-divider">11. Performance Optimization</h2>
+
+            <div class="content-section">
+                <h3>Query Optimization Tips</h3>
+                <ul>
+                    <li><strong>Use indexes strategically</strong> on frequently queried columns</li>
+                    <li><strong>Avoid SELECT *</strong>—specify only needed columns</li>
+                    <li><strong>Use WHERE instead of HAVING</strong> when filtering before grouping</li>
+                    <li><strong>Avoid functions in WHERE clauses</strong> on indexed columns (breaks index usage)</li>
+                    <li><strong>Use EXISTS instead of IN</strong> for large subqueries</li>
+                    <li><strong>Limit result sets</strong> with TOP or OFFSET/FETCH</li>
+                </ul>
+
+                <h3>Execution Plans</h3>
+                <p>View how SQL Server executes a query to identify bottlenecks:</p>
+                <div class="code-block"><span class="comment">-- Show execution plan</span>
+<span class="keyword">SET SHOWPLAN_TEXT ON</span>;
+<span class="keyword">GO</span>
+
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> Students <span class="keyword">WHERE</span> GPA > 3.5;
+<span class="keyword">GO</span>
+
+<span class="keyword">SET SHOWPLAN_TEXT OFF</span>;</div>
+
+                <h3>Common Performance Issues</h3>
+                <ul>
+                    <li><strong>Table scans:</strong> Add indexes to avoid full table scans</li>
+                    <li><strong>Missing statistics:</strong> Update statistics regularly</li>
+                    <li><strong>Blocking/deadlocks:</strong> Optimize transaction isolation levels</li>
+                    <li><strong>Parameter sniffing:</strong> Use query hints or RECOMPILE</li>
+                </ul>
+            </div>
+
+            <h2 class="section-divider">12. Advanced Concepts</h2>
+
+            <div class="content-section">
+                <h3>Window Functions (ROW_NUMBER, RANK, DENSE_RANK)</h3>
+                <div class="code-block"><span class="comment">-- Rank students by GPA</span>
+<span class="keyword">SELECT</span>
+    FirstName,
+    LastName,
+    GPA,
+    <span class="keyword">ROW_NUMBER() OVER</span>(<span class="keyword">ORDER BY</span> GPA <span class="keyword">DESC</span>) <span class="keyword">AS</span> RowNum,
+    <span class="keyword">RANK() OVER</span>(<span class="keyword">ORDER BY</span> GPA <span class="keyword">DESC</span>) <span class="keyword">AS</span> Rank,
+    <span class="keyword">DENSE_RANK() OVER</span>(<span class="keyword">ORDER BY</span> GPA <span class="keyword">DESC</span>) <span class="keyword">AS</span> DenseRank
+<span class="keyword">FROM</span> Students;</div>
+
+                <h3>Common Table Expressions (CTEs)</h3>
+                <div class="code-block"><span class="comment">-- Temporary named result set</span>
+<span class="keyword">WITH</span> HighPerformers <span class="keyword">AS</span> (
+    <span class="keyword">SELECT</span> StudentID, FirstName, LastName, GPA
+    <span class="keyword">FROM</span> Students
+    <span class="keyword">WHERE</span> GPA >= 3.5
+)
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> HighPerformers
+<span class="keyword">ORDER BY</span> GPA <span class="keyword">DESC</span>;</div>
+
+                <h3>Subqueries</h3>
+                <div class="code-block"><span class="comment">-- Students with GPA above average</span>
+<span class="keyword">SELECT</span> FirstName, LastName, GPA
+<span class="keyword">FROM</span> Students
+<span class="keyword">WHERE</span> GPA > (<span class="keyword">SELECT AVG</span>(GPA) <span class="keyword">FROM</span> Students);</div>
+
+                <h3>PIVOT and UNPIVOT</h3>
+                <div class="code-block"><span class="comment">-- Pivot enrollments by semester</span>
+<span class="keyword">SELECT</span> *
+<span class="keyword">FROM</span> (
+    <span class="keyword">SELECT</span> StudentID, Semester, Credits
+    <span class="keyword">FROM</span> Enrollments
+) <span class="keyword">AS</span> SourceTable
+<span class="keyword">PIVOT</span> (
+    <span class="keyword">SUM</span>(Credits)
+    <span class="keyword">FOR</span> Semester <span class="keyword">IN</span> ([Fall], [Spring], [Summer])
+) <span class="keyword">AS</span> PivotTable;</div>
+            </div>
+
+            <h2 class="section-divider">13. HESAA-Relevant Scenarios</h2>
+
+            <div class="content-section">
+                <h3>Student Financial Aid Database Example</h3>
+
+                <div class="highlight-box">
+                    <h4>Scenario: Query students eligible for specific grants</h4>
+                    <div class="code-block"><span class="keyword">SELECT</span>
+    s.StudentID,
+    s.FirstName + <span class="string">' '</span> + s.LastName <span class="keyword">AS</span> FullName,
+    a.AwardName,
+    a.AwardAmount,
+    a.AwardDate
+<span class="keyword">FROM</span> Students s
+<span class="keyword">INNER JOIN</span> FinancialAidApplications faa
+    <span class="keyword">ON</span> s.StudentID = faa.StudentID
+<span class="keyword">INNER JOIN</span> Awards a
+    <span class="keyword">ON</span> faa.ApplicationID = a.ApplicationID
+<span class="keyword">WHERE</span>
+    faa.ApplicationStatus = <span class="string">'Approved'</span>
+    <span class="keyword">AND</span> a.AwardType = <span class="string">'Grant'</span>
+    <span class="keyword">AND</span> a.AwardDate >= <span class="string">'2025-01-01'</span>
+<span class="keyword">ORDER BY</span> a.AwardAmount <span class="keyword">DESC</span>;</div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Scenario: Track application processing time</h4>
+                    <div class="code-block"><span class="keyword">SELECT</span>
+    ApplicationID,
+    StudentID,
+    SubmissionDate,
+    DecisionDate,
+    <span class="keyword">DATEDIFF</span>(<span class="keyword">DAY</span>, SubmissionDate, DecisionDate) <span class="keyword">AS</span> ProcessingDays
+<span class="keyword">FROM</span> FinancialAidApplications
+<span class="keyword">WHERE</span> ApplicationStatus = <span class="string">'Approved'</span>
+<span class="keyword">ORDER BY</span> ProcessingDays <span class="keyword">DESC</span>;</div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Scenario: Generate monthly disbursement report</h4>
+                    <div class="code-block"><span class="keyword">SELECT</span>
+    <span class="keyword">YEAR</span>(DisbursementDate) <span class="keyword">AS</span> Year,
+    <span class="keyword">MONTH</span>(DisbursementDate) <span class="keyword">AS</span> Month,
+    ProgramType,
+    <span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> DisbursementCount,
+    <span class="keyword">SUM</span>(DisbursementAmount) <span class="keyword">AS</span> TotalAmount
+<span class="keyword">FROM</span> Disbursements
+<span class="keyword">GROUP BY</span>
+    <span class="keyword">YEAR</span>(DisbursementDate),
+    <span class="keyword">MONTH</span>(DisbursementDate),
+    ProgramType
+<span class="keyword">HAVING SUM</span>(DisbursementAmount) > 10000
+<span class="keyword">ORDER BY</span> Year, Month;</div>
+                </div>
+            </div>
+
+            <div class="tip-box" style="margin-top: 40px;">
+                <h3>Interview Tips</h3>
+                <ul>
+                    <li><strong>Practice writing queries:</strong> Be ready to write SQL on a whiteboard or screen share</li>
+                    <li><strong>Explain your thinking:</strong> Walk through your query logic step-by-step</li>
+                    <li><strong>Optimize queries:</strong> Mention indexes, execution plans, and performance considerations</li>
+                    <li><strong>Know ACID cold:</strong> Be able to explain each property with real-world examples</li>
+                    <li><strong>Understand JOINs visually:</strong> Draw Venn diagrams if helpful</li>
+                    <li><strong>Relate to HESAA:</strong> Tie examples to student financial aid scenarios (applications, awards, disbursements)</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p><strong>HESAA Web Developer Interview Preparation</strong></p>
+            <p>MS SQL Server | Database Management | Query Optimization</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Generated: December 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
